@@ -11,18 +11,18 @@
 </head>
 <body class="is-home">
 <header class="header">
-    <div class="header__top">
+    <div class="header__top js-header-top">
         <div class="header__top-inner">
-            <div class="header__logo"><img src="assets/img/logo.svg" alt="Charter Papa"></div>
+            <div class="header__logo"><img src="assets/img/logo.png" width="324" height="167" alt="Charter Papa"></div>
             <nav class="menu"><a href="#"></a>
                 <button class="burger js-burger" type="button"><span>toggle menu</span></button>
                 <ul class="menu__list  js-menu">
-                    <li><a href="#">Каталог</a></li>
+                    <li class="active"><a href="#">Каталог</a></li>
                     <li><a href="#">Спец предложения</a></li>
                     <li><a href="#">чартеры</a></li>
                     <li><a href="#">Новости</a></li>
                     <li><a href="#">Партнерам</a></li>
-                    <li>
+                    <li class="menu-item-has-children">
                         <a href="#">Доп услуги</a>
                         <ul>
                             <li><a href="#">Трансферы</a></li>
@@ -34,57 +34,69 @@
                     <li><a href="#">Контакты</a></li>
                 </ul>
             </nav>
-            <button class="header__music" type="button">play music</button>
-            <a href="#" class="header__lang">En</a>
-            <button class="header__feedback" type="button">Обратная связь</button>
+            <button class="header__music header__btn" type="button">play music</button>
+            <a href="#" class="header__lang header__btn">En</a>
+            <button class="header__feedback header__btn" type="button">Обратная связь</button>
         </div>
     </div>
-    <ul class="header__slider">
-        <li>
-            <picture>
-                <img src="assets/img/header-bg.jpg" srcset="assets/img/header-bg@2x.jpg 2x" width="1940" height="936"
-                     alt="slide-1">
-            </picture>
-        </li>
-    </ul>
-    <div class="header__charter-wrap">
-        <button class="header__charter btn" type="button">Наши чартеры</button>
+    <div class="header__main">
+        <ul class="header__slider">
+            <li>
+                <a href="#">
+                    <picture>
+                        <img src="assets/img/header-bg.jpg" srcset="assets/img/header-bg@2x.jpg 2x"
+                             alt="slide-1">
+                    </picture>
+                </a>
+            </li>
+        </ul>
+        <div class="header__charter-wrap">
+            <button class="header__charter btn" type="button">Наши чартеры</button>
+        </div>
     </div>
+
     <div class="search">
         <form action="post" class="search__inner">
-            <div class="search__input-inner">
-                <select name="region" id="region" class="search__select">
+            <div class="search__input-wrapper  search__input-wrapper--region">
+                <select name="region" id="region" class="search__select js-example-placeholder-multiple">
+                    <option value="default">Регион</option>
                     <option value="cannes">Cannes</option>
                     <option value="monaco">Monaco</option>
                 </select>
                 <label class="search__label" for="region">Регион</label>
             </div>
-            <div class="search__input-wrapper">
-                <select name="" id="yacht-type" class="search__select">
+            <div class="search__input-wrapper  search__input-wrapper--type">
+                <select name="" id="yacht-type" class="search__select  js-example-placeholder-multiple">
+                    <option value="default">Тип яхты</option>
                     <option value="type-1">Тип 1</option>
                     <option value="type-2">Тип 2</option>
                 </select>
                 <label class="search__label" for="yacht-type">Тип яхты</label>
             </div>
-            <div class="search__input-wrapper">
-                <input type="text" class="search__range" id="range">
-                <label class="search__label" for="range">Цена</label>
+            <div class="search__input-wrapper  search__input-wrapper--range">
+                <div class="search__range-wrapper">
+                    <label class="search__label" for="range">Цена</label>
+                    <input type="text" class="search__range" id="range">
+                </div>
+                <div id="slider-range"></div>
             </div>
-            <div class="search__input-wrapper">
-                <select name="" id="yacht-size" class="search__select">
+            <div class="search__input-wrapper  search__input-wrapper--size">
+                <select name="" id="yacht-size" class="search__select js-example-placeholder-multiple">
+                    <option value="default">Размер яхты</option>
                     <option value="type-1">15.2m (49ft)</option>
                     <option value="type-2">15.2m (49ft)</option>
                 </select>
                 <label class="search__label" for="yacht-size">Размер яхты</label>
             </div>
-            <div class="search__input-wrapper">
-                <select name="design-build" id="design-build" class="search__select">
+            <div class="search__input-wrapper  search__input-wrapper--design">
+                <select name="design-build" id="design-build" class="search__select js-example-placeholder-multiple">
+                    <option value="default">Строитель/Дизайнер</option>
                     <option value="type-1">Строитель</option>
                     <option value="type-2">Дизайнер</option>
                 </select>
                 <label class="search__label" for="design-build">Строитель/Дизайнер</label>
             </div>
-            <div class="search__input-wrapper">
+            <div class="search__input-wrapper  search__input-wrapper--checkbox">
                 <div class="search__checkbox-wrap">
                     <input type="checkbox" class="search__checkbox" id="special-offer">
                     <label for="special-offer">Спец предложения</label>
@@ -105,23 +117,31 @@
                     <input type="checkbox" class="search__checkbox" id="last-minute">
                     <label for="last-minute">Последняя минута</label>
                 </div>
-                <button class="search__advanced btn btn--border-white" type="button">Расширенный поиск</button>
+            </div>
+
+            <div class="search__btn-wrapper">
+                <button class="search__advanced  btn  btn--border-white  js-search-extended" type="button">Расширенный
+                    поиск
+                </button>
                 <button class="search__btn btn" type="submit">Поиск</button>
             </div>
         </form>
     </div>
 </header>
+
 <div class="charters">
     <h2 class="title-bottom-line">Популярные чартеры</h2>
-    <div class="charters__slider">
-        <div class="charters__arrow-wrapper">
-            <button class="charters__arrow charters__arrow--back" type="button">back</button>
+    <div class="charters__slide">
+        <div class="charters__arrow-wrapper charters__arrow-wrapper--back">
+            <img src="assets/img/arrow-left.png" width="360" height="400" alt="prew">
+            <button class="charters__arrow" type="button">back</button>
         </div>
-        <div class="charters__arrow-wrapper">
-            <button class="charters__arrow  charters__arrow--next" type="button">next</button>
+        <div class="charters__arrow-wrapper  charters__arrow-wrapper--next">
+            <img src="assets/img/arrow-right.png" width="200" height="400" alt="next">
+            <button class="charters__arrow" type="button">next</button>
         </div>
         <ul class="js-charters-slider">
-            <li class="charters__slide">
+            <li class="charters__slider">
                 <div class="charters__img">
                     <img src="assets/img/charters-slide.jpg" width="560" height="477" alt="Superyacht Charter">
                 </div>
@@ -150,7 +170,7 @@
 <div class="places">
     <h2 class="title-bottom-line">Лучшие места отдыха</h2>
     <div class="places__list">
-        <div class="places__wrapper">
+        <div class="places__wrapper  places__wrapper--monaco">
             <a href="#" class="places__item">
                 <div class="places__img">
                     <picture>
@@ -158,7 +178,7 @@
                              height="272" alt="Monaco">
                     </picture>
                 </div>
-                <h3 class="places__item__title">Monaco</h3>
+                <h3 class="places__item-title">Monaco</h3>
             </a>
             <a href="#" class="places__item">
                 <div class="places__img">
@@ -167,7 +187,7 @@
                              height="272" alt="Cannes">
                     </picture>
                 </div>
-                <h3 class="places__item__title">Cannes</h3>
+                <h3 class="places__item-title">Cannes</h3>
             </a>
         </div>
         <a href="#" class="places__item  places__item--center">
@@ -177,9 +197,9 @@
                          width="770" height="574" alt="The caribbean">
                 </picture>
             </div>
-            <h3 class="places__item__title">The caribbean</h3>
+            <h3 class="places__item-title">The caribbean</h3>
         </a>
-        <div class="places__wrapper">
+        <div class="places__wrapper  places__wrapper--nise">
             <a href="#" class="places__item">
                 <div class="places__img">
                     <picture>
@@ -187,7 +207,7 @@
                              height="272" alt="Nice">
                     </picture>
                 </div>
-                <h3 class="places__item__title">Nice</h3>
+                <h3 class="places__item-title">Nice</h3>
             </a>
             <a href="#" class="places__item">
                 <div class="places__img">
@@ -196,32 +216,34 @@
                              width="555" height="272" alt="St Tropez">
                     </picture>
                 </div>
-                <h3 class="places__item__title">St Tropez</h3>
+                <h3 class="places__item-title">St Tropez</h3>
             </a>
         </div>
-        <a href="#" class="places__item">
-            <div class="places__img">
-                <picture>
-                    <img src="assets/img/places-porto-cervo.jpg" srcset="assets/img/places-porto-cervo@2x.jpg 2x"
-                         width="952" height="467" alt="Porto Cervo">
-                </picture>
-            </div>
-            <h3 class="places__item__title">Porto Cervo</h3>
-        </a>
-        <a href="#" class="places__item">
-            <div class="places__img">
-                <picture>
-                    <img src="assets/img/places-amalfi.jpg" srcset="assets/img/places-amalfi@2x.jpg 2x" width="952"
-                         height="467" alt="Amalfi">
-                </picture>
-            </div>
-            <h3 class="places__item__title">Amalfi</h3>
-        </a>
+        <div class="places__wrapper  places__wrapper--bottom">
+            <a href="#" class="places__item  places__item--cervo">
+                <div class="places__img">
+                    <picture>
+                        <img src="assets/img/places-porto-cervo.jpg" srcset="assets/img/places-porto-cervo@2x.jpg 2x"
+                             width="952" height="467" alt="Porto Cervo">
+                    </picture>
+                </div>
+                <h3 class="places__item-title">Porto Cervo</h3>
+            </a>
+            <a href="#" class="places__item  places__item--amalfi">
+                <div class="places__img">
+                    <picture>
+                        <img src="assets/img/places-amalfi.jpg" srcset="assets/img/places-amalfi@2x.jpg 2x" width="952"
+                             height="467" alt="Amalfi">
+                    </picture>
+                </div>
+                <h3 class="places__item-title">Amalfi</h3>
+            </a>
+        </div>
     </div>
 </div>
 <div class="new-yachts">
+    <h2 class="title-bottom-line">Новые поступления яхт</h2>
     <div class="new-yachts__inner">
-        <h2>Новые поступления яхт</h2>
         <div class="new-yachts__list">
             <div class="new-yachts__item">
                 <div class="new-yachts__img">
@@ -248,10 +270,12 @@
                 </div>
             </div>
             <div class="new-yachts__item">
-                <picture>
-                    <img src="assets/img/new-yacht-2.jpg" srcset="assets/img/new-yacht-2@2x.jpg 2x" width="370"
-                         height="310" alt="Motor Yacht ANASTASIA">
-                </picture>
+                <div class="new-yachts__img">
+                    <picture>
+                        <img src="assets/img/new-yacht-2.jpg" srcset="assets/img/new-yacht-2@2x.jpg 2x" width="370"
+                             height="310" alt="Motor Yacht ANASTASIA">
+                    </picture>
+                </div>
                 <div class="new-yachts__info">
                     <h3 class="new-yachts__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -270,10 +294,12 @@
                 </div>
             </div>
             <div class="new-yachts__item">
-                <picture>
-                    <img src="assets/img/new-yacht-3.jpg" srcset="assets/img/new-yacht-3@2x.jpg 2x" width="370"
-                         height="310" alt="Motor Yacht ANASTASIA">
-                </picture>
+                <div class="new-yachts__img">
+                    <picture>
+                        <img src="assets/img/new-yacht-3.jpg" srcset="assets/img/new-yacht-3@2x.jpg 2x" width="370"
+                             height="310" alt="Motor Yacht ANASTASIA">
+                    </picture>
+                </div>
                 <div class="new-yachts__info">
                     <h3 class="new-yachts__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -292,10 +318,12 @@
                 </div>
             </div>
             <div class="new-yachts__item">
-                <picture>
-                    <img src="assets/img/new-yacht-4.jpg" srcset="assets/img/new-yacht-4@2x.jpg 2x" width="370"
-                         height="310" alt="Motor Yacht ANASTASIA">
-                </picture>
+                <div class="new-yachts__img">
+                    <picture>
+                        <img src="assets/img/new-yacht-4.jpg" srcset="assets/img/new-yacht-4@2x.jpg 2x" width="370"
+                             height="310" alt="Motor Yacht ANASTASIA">
+                    </picture>
+                </div>
                 <div class="new-yachts__info">
                     <h3 class="new-yachts__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -338,10 +366,12 @@
                 </div>
             </div>
             <div class="new-yachts__item">
-                <picture>
+                <div class="new-yachts__img">
+                    <picture>
                     <img src="assets/img/new-yacht-2.jpg" srcset="assets/img/new-yacht-2@2x.jpg 2x" width="370"
                          height="310" alt="Motor Yacht ANASTASIA">
                 </picture>
+                </div>
                 <div class="new-yachts__info">
                     <h3 class="new-yachts__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -360,10 +390,12 @@
                 </div>
             </div>
             <div class="new-yachts__item">
-                <picture>
+                <div class="new-yachts__img">
+                    <picture>
                     <img src="assets/img/new-yacht-3.jpg" srcset="assets/img/new-yacht-3@2x.jpg 2x" width="370"
                          height="310" alt="Motor Yacht ANASTASIA">
                 </picture>
+                </div>
                 <div class="new-yachts__info">
                     <h3 class="new-yachts__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -382,10 +414,12 @@
                 </div>
             </div>
             <div class="new-yachts__item">
-                <picture>
+                <div class="new-yachts__img">
+                    <picture>
                     <img src="assets/img/new-yacht-4.jpg" srcset="assets/img/new-yacht-4@2x.jpg 2x" width="370"
                          height="310" alt="Motor Yacht ANASTASIA">
                 </picture>
+                </div>
                 <div class="new-yachts__info">
                     <h3 class="new-yachts__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -404,25 +438,32 @@
                 </div>
             </div>
         </div>
-        <button class="new-yachts__see-more btn btn--border-light-blue" type="button">Смотреть все яхты</button>
+        <a href="#" class="new-yachts__see-more btn btn--border-light-blue" >Смотреть все яхты</a>
     </div>
+
 </div>
 <div class="callback">
     <div class="callback__inner">
-        <h2 class="line-anchor">Есть вопросы? мы с вами свяжемся!</h2>
+        <h2>Есть вопросы? мы с вами свяжемся!</h2>
         <form action="get" class="callback__form" data-scroll>
-            <input type="text"  class="callback__field field"  id="name" required>
-            <label for="name">Name</label>
-            <input type="email" class="callback__field field" id="email" required>
-            <label for="email">Email</label>
-            <input type="tel"  class="callback__field field" id="tel" required>
-            <label for="tel">096 34223442</label>
-            <button class="callback__btn" type="submit">Отправить</button>
+            <div class="callback__field-wrapper">
+                <input type="text" class="callback__field field" id="name" required>
+                <label for="name">Name</label>
+            </div>
+            <div class="callback__field-wrapper">
+                <input type="email" class="callback__field field" id="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="callback__field-wrapper">
+                <input type="tel" class="callback__field field" id="tel" required>
+                <label for="tel">096 34223442</label>
+            </div>
+            <button class="callback__btn btn" type="submit">Отправить</button>
         </form>
     </div>
 </div>
 <div class="partners">
-    <h2 class="title-line-bottom">Наши партнеры</h2>
+    <h2 class="title-bottom-line">Наши партнеры</h2>
     <div class="partners__inner">
         <div class="partners__item">
             <img src="assets/img/svg/partners-icon-slack.svg" width="80" height="24" alt="slack">
@@ -453,7 +494,7 @@
 </div>
 <footer class="footer">
     <div class="footer__inner">
-        <a href="#" class="footer__logo"><img src="assets/img/logo.svg" alt="Charter Papa"></a>
+        <a href="#" class="footer__logo"><img src="assets/img/logo.png" width="193" height="100" alt="Charter Papa"></a>
         <ul class="footer__menu">
             <li><a href="#">Каталог</a></li>
             <li><a href="#">Спец предложения</a></li>
@@ -464,14 +505,16 @@
         </ul>
         <div class="footer__pay">
             <p class="footer__title-pay">Наши платежные системы</p>
-            <img src="assets/img/visa-logo.svg" width="53" height="16" alt="visa">
-            <img src="assets/img/MasterCard_Logo.svg" width="50" height="28" alt="MasterCard">
+            <div class="footer__img-pay">
+                <div class="footer__img"><img src="assets/img/visa-logo.svg" width="53" height="16" alt="visa"></div>
+                <div class="footer__img"><img src="assets/img/MasterCard_Logo.svg" width="50" height="28" alt="MasterCard"></div>
+            </div>
         </div>
         <div class="footer__contacts">
             <p>8 Boulevard Theodore Roosevelt,<br>
                 Beauleu Sur Mer, France 06310 <br>
-                <a href="tel:+33751115450">+33 751 11 54 50;</a>
-                <a href="mailto:charterpapa@yandex.ru">charterpapa@yandex.ru</a>
+                <a class="footer__tel" href="tel:+33751115450">+33 751 11 54 50;</a>
+                <a class="footer__mail" href="mailto:charterpapa@yandex.ru">charterpapa@yandex.ru</a>
             </p>
         </div>
     </div>
@@ -479,6 +522,8 @@
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/plugins/slick.min.js"></script>
 <script src="assets/js/plugins/scrollTriger.min.js"></script>
+<script src="assets/js/plugins/select2.min.js"></script>
+<script src="assets/js/plugins/jquery-ui.min.js"></script>
 <script src="assets/js/custom.js"></script>
 </body>
 </html>
