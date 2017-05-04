@@ -15,9 +15,20 @@ $(function () {
       pauseOnHover: false
     });
 
-    $('.js-charters-slider.single-item').slick({
+    var sliderCharters = $('.js-charters-slider.single-item');
+        sliderCharters.slick({
       prevArrow: $('.charters__arrow-wrapper--back .charters__arrow'),
-      nextArrow: $('.charters__arrow-wrapper--next .charters__arrow')
+      nextArrow: $('.charters__arrow-wrapper--next .charters__arrow'),
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: "unslick"
+        }
+      ]
+    });
+
+    $('.js-charters-slider.single-item').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      console.log(nextSlide);
     });
 
     //show feedback
@@ -129,3 +140,10 @@ $(window).on('scroll load', function () {
   bgChangeHeader();
 });
 //end
+
+//resize slider
+$(window).on('orientationchange resize', function () {
+  if ($('.js-charters-slider.single-item').length) {
+    $('.js-charters-slider.single-item').slick('resize');
+  }
+});

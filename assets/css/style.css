@@ -3282,7 +3282,15 @@ img {
     .places__item--center .places__item-title {
       font-size: 60px; }
   .callback__field-wrapper {
-    margin-right: 10px; } }
+    margin-right: 10px; }
+  .charters {
+    padding-bottom: 20px; }
+  .charters__arrow-wrapper {
+    display: none; }
+  .charters__slide {
+    padding: 0 15px; }
+  .charters__slider {
+    padding-bottom: 30px; } }
 
 @media (max-width: 801px) {
   .new-yachts__list {
