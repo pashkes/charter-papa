@@ -11,28 +11,32 @@
 </head>
 <body class="is-home">
 <header class="header">
-    <div class="header__top js-header-top">
+    <div class="header__top  js-header-top">
         <div class="header__top-inner">
             <div class="header__logo"><img src="assets/img/logo.png" width="324" height="167" alt="Charter Papa"></div>
             <nav class="menu"><a href="#"></a>
-                <button class="burger js-burger" type="button"><span>toggle menu</span></button>
-                <ul class="menu__list  js-menu">
-                    <li class="active"><a href="#">Каталог</a></li>
-                    <li><a href="#">Спец предложения</a></li>
-                    <li><a href="#">чартеры</a></li>
-                    <li><a href="#">Новости</a></li>
-                    <li><a href="#">Партнерам</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Доп услуги</a>
-                        <ul>
-                            <li><a href="#">Трансферы</a></li>
-                            <li><a href="#">Аренда авто</a></li>
-                            <li><a href="#">Организация мероприятий</a></li>
-                            <li><a href="#">Консьерж сервис.</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
+                <button class="burger js-burger burger__htx" type="button"><span>toggle menu</span></button>
+                <div class="menu__list-wrapper">
+                    <ul class="menu__list js-show-submenu">
+                        <li class="active"><a href="#">Каталог</a></li>
+                        <li><a href="#">Спец предложения</a></li>
+                        <li><a href="#">чартеры</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">Партнерам</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Доп услуги</a>
+                            <ul>
+                                <li><a href="#">Трансферы</a></li>
+                                <li><a href="#">Аренда авто</a></li>
+                                <li><a href="#">Организация мероприятий</a></li>
+                                <li><a href="#">Консьерж сервис.</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                    <button class="header__music header__btn" type="button">play music</button>
+                    <a href="#" class="header__lang header__btn">En</a>
+                </div>
             </nav>
             <button class="header__music header__btn" type="button">play music</button>
             <a href="#" class="header__lang header__btn">En</a>
@@ -40,7 +44,15 @@
         </div>
     </div>
     <div class="header__main">
-        <ul class="header__slider">
+        <ul class="header__slider single-item">
+            <li>
+                <a href="#">
+                    <picture>
+                        <img src="assets/img/header-bg.jpg" srcset="assets/img/header-bg@2x.jpg 2x"
+                             alt="slide-1">
+                    </picture>
+                </a>
+            </li>
             <li>
                 <a href="#">
                     <picture>
@@ -50,15 +62,15 @@
                 </a>
             </li>
         </ul>
-        <div class="header__charter-wrap">
-            <button class="header__charter btn  js-btn-show-charters" type="button">Наши чартеры</button>
+        <div class="header__charter-wrap" data-scroll>
+            <button class="header__charter btn  btn--white  js-btn-show-charters" type="button">Наши чартеры</button>
         </div>
     </div>
 
-    <div class="search">
+    <div class="search" data-scroll>
         <form action="post" class="search__inner">
             <div class="search__input-wrapper  search__input-wrapper--region">
-                <select name="region" id="region" class="search__select js-example-placeholder-multiple">
+                <select name="region" id="region" class="search__select js-example-placeholder-multiple" required>
                     <option value="default">Регион</option>
                     <option value="cannes">Cannes</option>
                     <option value="monaco">Monaco</option>
@@ -66,7 +78,7 @@
                 <label class="search__label" for="region">Регион</label>
             </div>
             <div class="search__input-wrapper  search__input-wrapper--type">
-                <select name="" id="yacht-type" class="search__select  js-example-placeholder-multiple">
+                <select name="" id="yacht-type" class="search__select  js-example-placeholder-multiple" required>
                     <option value="default">Тип яхты</option>
                     <option value="type-1">Тип 1</option>
                     <option value="type-2">Тип 2</option>
@@ -81,7 +93,7 @@
                 <div id="slider-range"></div>
             </div>
             <div class="search__input-wrapper  search__input-wrapper--size">
-                <select name="" id="yacht-size" class="search__select js-example-placeholder-multiple">
+                <select name="" id="yacht-size" class="search__select js-example-placeholder-multiple" required>
                     <option value="default">Размер яхты</option>
                     <option value="type-1">15.2m (49ft)</option>
                     <option value="type-2">15.2m (49ft)</option>
@@ -89,7 +101,8 @@
                 <label class="search__label" for="yacht-size">Размер яхты</label>
             </div>
             <div class="search__input-wrapper  search__input-wrapper--design">
-                <select name="design-build" id="design-build" class="search__select js-example-placeholder-multiple">
+                <select name="design-build" id="design-build" class="search__select js-example-placeholder-multiple"
+                        required>
                     <option value="default">Строитель/Дизайнер</option>
                     <option value="type-1">Строитель</option>
                     <option value="type-2">Дизайнер</option>
@@ -123,129 +136,164 @@
                 <button class="search__advanced  btn  btn--border-white  js-search-extended" type="button">Расширенный
                     поиск
                 </button>
-                <button class="search__btn btn" type="submit">Поиск</button>
+                <button class="search__btn btn  btn--white" type="submit">Поиск</button>
             </div>
         </form>
     </div>
 </header>
 
 <div class="charters">
-    <h2 class="title-bottom-line">Популярные чартеры</h2>
+    <h2 class="title-bottom-line" data-scroll>Популярные чартеры</h2>
     <div class="charters__slide">
-        <div class="charters__arrow-wrapper charters__arrow-wrapper--back">
-            <img src="assets/img/arrow-left.png" width="360" height="400" alt="prew">
+        <div class="charters__arrow-wrapper charters__arrow-wrapper--back" style="background-image: url(assets/img/arrow-left.png)" data-scroll>
             <button class="charters__arrow" type="button">back</button>
         </div>
-        <div class="charters__arrow-wrapper  charters__arrow-wrapper--next">
-            <img src="assets/img/arrow-right.png" width="200" height="400" alt="next">
+        <div class="charters__arrow-wrapper  charters__arrow-wrapper--next" style="background-image: url(assets/img/arrow-right.png)" data-scroll>
             <button class="charters__arrow" type="button">next</button>
         </div>
-        <ul class="js-charters-slider">
-            <li class="charters__slider">
-                <div class="charters__img">
-                    <img src="assets/img/charters-slide.jpg" width="560" height="477" alt="Superyacht Charter">
-                </div>
-                <div class="charters__content">
-                    <h3>Superyacht Charter</h3>
-                    <div class="charters__text">
-                        <p>A superyacht yacht charter takes the luxury, freedom and personalisation of a yacht charter
-                            vacation to the highest extreme. Superyachts boast unsurpassed indulgence, extravagance and
-                            prestige. These boats offer the best available marine technology, design, décor,
-                            entertainment and recreational equipment. The deck crews are technically proficient in
-                            navigation, cruising, safety, ship management and seamanship. The interior crew are
-                            similarly masters in their various specialist fields and masters at making your holiday the
-                            best that it can be. A private superyacht charter is distinguished by a high level of
-                            professional and discrete service, offering unparalleled and personalized service. A
-                            personalised cruise itinerary will be prepared as to your inclination or whim, with the
-                            helpful recommendations of our experienced consultants. Menus, beverages and specialised
-                            fine cuisine will be individually tailored to your preferred tastes. Likewise, a vast choice
-                            of music, media and entertainment can be available based on your personalised requests.</p>
+        <ul class="js-charters-slider  single-item ">
+            <li>
+                <div class="charters__slider">
+                    <div class="charters__img" data-scroll>
+                        <img src="assets/img/charters-slide.jpg" width="560" height="477" alt="Superyacht Charter">
                     </div>
-                    <button class="charters__more btn btn--border-blue" type="button">Подробнее</button>
+                    <div class="charters__content">
+                        <h3 data-scroll>Superyacht Charter</h3>
+                        <div class="charters__text" data-scroll>
+                            <p>A superyacht yacht charter takes the luxury, freedom and personalisation of a yacht
+                                charter
+                                vacation to the highest extreme. Superyachts boast unsurpassed indulgence, extravagance
+                                and
+                                prestige. These boats offer the best available marine technology, design, décor,
+                                entertainment and recreational equipment. The deck crews are technically proficient in
+                                navigation, cruising, safety, ship management and seamanship. The interior crew are
+                                similarly masters in their various specialist fields and masters at making your holiday
+                                the
+                                best that it can be. A private superyacht charter is distinguished by a high level of
+                                professional and discrete service, offering unparalleled and personalized service. A
+                                personalised cruise itinerary will be prepared as to your inclination or whim, with the
+                                helpful recommendations of our experienced consultants. Menus, beverages and specialised
+                                fine cuisine will be individually tailored to your preferred tastes. Likewise, a vast
+                                choice
+                                of music, media and entertainment can be available based on your personalised
+                                requests.</p>
+                        </div>
+                        <button class="charters__more btn btn--border-blue" type="button">Подробнее</button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="charters__slider">
+                    <div class="charters__img">
+                        <img src="assets/img/charters-slide.jpg" width="560" height="477" alt="Superyacht Charter">
+                    </div>
+                    <div class="charters__content">
+                        <h3>Superyacht Charter</h3>
+                        <div class="charters__text">
+                            <p>A superyacht yacht charter takes the luxury, freedom and personalisation of a yacht
+                                charter
+                                vacation to the highest extreme. Superyachts boast unsurpassed indulgence, extravagance
+                                and
+                                prestige. These boats offer the best available marine technology, design, décor,
+                                entertainment and recreational equipment. The deck crews are technically proficient in
+                                navigation, cruising, safety, ship management and seamanship. The interior crew are
+                                similarly masters in their various specialist fields and masters at making your holiday
+                                the
+                                best that it can be. A private superyacht charter is distinguished by a high level of
+                                professional and discrete service, offering unparalleled and personalized service. A
+                                personalised cruise itinerary will be prepared as to your inclination or whim, with the
+                                helpful recommendations of our experienced consultants. Menus, beverages and specialised
+                                fine cuisine will be individually tailored to your preferred tastes. Likewise, a vast
+                                choice
+                                of music, media and entertainment can be available based on your personalised
+                                requests.</p>
+                        </div>
+                        <button class="charters__more btn btn--border-blue" type="button">Подробнее</button>
+                    </div>
                 </div>
             </li>
         </ul>
     </div>
 </div>
 <div class="places">
-    <h2 class="title-bottom-line">Лучшие места отдыха</h2>
+    <h2 class="title-bottom-line" data-scroll>Лучшие места отдыха</h2>
     <div class="places__list">
         <div class="places__wrapper  places__wrapper--monaco">
-            <a href="#" class="places__item">
+            <a href="#" class="places__item"  data-scroll>
                 <div class="places__img">
                     <picture>
                         <img src="assets/img/places-monaco.jpg" srcset="assets/img/places-monaco@2x.jpg 2x" width="555"
                              height="272" alt="Monaco">
                     </picture>
                 </div>
-                <h3 class="places__item-title">Monaco</h3>
+                <h3 class="places__item-title" data-scroll>Monaco</h3>
             </a>
-            <a href="#" class="places__item">
+            <a href="#" class="places__item" data-scroll>
                 <div class="places__img">
                     <picture>
                         <img src="assets/img/places-cannes.jpg" srcset="assets/img/places-cannes@2x.jpg 2x" width="555"
                              height="272" alt="Cannes">
                     </picture>
                 </div>
-                <h3 class="places__item-title">Cannes</h3>
+                <h3 class="places__item-title" data-scroll>Cannes</h3>
             </a>
         </div>
-        <a href="#" class="places__item  places__item--center">
+        <a href="#" class="places__item  places__item--center" data-scroll>
             <div class="places__img">
                 <picture>
-                    <img src="assets/img/places_the-carribean.jpg" srcset="assets/img/places_the-carribean@2x.jpg 2x"
+                    <img src="assets/img/places_the-carribean.jpg" srcset="assets/img/places_the-carribean.jpg 2x"
                          width="770" height="574" alt="The caribbean">
                 </picture>
             </div>
             <h3 class="places__item-title">The caribbean</h3>
         </a>
         <div class="places__wrapper  places__wrapper--nise">
-            <a href="#" class="places__item">
+            <a href="#" class="places__item" data-scroll>
                 <div class="places__img">
                     <picture>
                         <img src="assets/img/places-nise.jpg" srcset="assets/img/places-nise@2x.jpg 2x" width="555"
                              height="272" alt="Nice">
                     </picture>
                 </div>
-                <h3 class="places__item-title">Nice</h3>
+                <h3 class="places__item-title" data-scroll>Nice</h3>
             </a>
-            <a href="#" class="places__item">
+            <a href="#" class="places__item" data-scroll>
                 <div class="places__img">
                     <picture>
                         <img src="assets/img/places-st-tropez.jpg" srcset="assets/img/places-st-tropez.jpg 2x"
                              width="555" height="272" alt="St Tropez">
                     </picture>
                 </div>
-                <h3 class="places__item-title">St Tropez</h3>
+                <h3 class="places__item-title" data-scroll>St Tropez</h3>
             </a>
         </div>
         <div class="places__wrapper  places__wrapper--bottom">
-            <a href="#" class="places__item  places__item--cervo">
+            <a href="#" class="places__item  places__item--cervo" data-scroll>
                 <div class="places__img">
                     <picture>
                         <img src="assets/img/places-porto-cervo.jpg" srcset="assets/img/places-porto-cervo@2x.jpg 2x"
                              width="952" height="467" alt="Porto Cervo">
                     </picture>
                 </div>
-                <h3 class="places__item-title">Porto Cervo</h3>
+                <h3 class="places__item-title" data-scroll>Porto Cervo</h3>
             </a>
-            <a href="#" class="places__item  places__item--amalfi">
+            <a href="#" class="places__item  places__item--amalfi" data-scroll>
                 <div class="places__img">
                     <picture>
                         <img src="assets/img/places-amalfi.jpg" srcset="assets/img/places-amalfi@2x.jpg 2x" width="952"
                              height="467" alt="Amalfi">
                     </picture>
                 </div>
-                <h3 class="places__item-title">Amalfi</h3>
+                <h3 class="places__item-title" data-scroll>Amalfi</h3>
             </a>
         </div>
     </div>
 </div>
 <div class="new-yachts">
-    <h2 class="title-bottom-line">Новые поступления яхт</h2>
-    <div class="new-yachts__inner">
+    <h2 class="title-bottom-line" data-scroll>Новые поступления яхт</h2>
+    <div class="new-yachts__inner" data-scroll>
         <div class="new-yachts__list">
-            <div class="new-yachts__item">
+            <div class="new-yachts__item" data-scroll>
                 <div class="new-yachts__img">
                     <picture>
                         <img src="assets/img/new-yacht-1.jpg" srcset="assets/img/new-yacht-1@2x.jpg 2x" width="370"
@@ -269,7 +317,7 @@
                     <a href="#" class="new-yachts__more">Подробнее</a>
                 </div>
             </div>
-            <div class="new-yachts__item">
+            <div class="new-yachts__item" data-scroll>
                 <div class="new-yachts__img">
                     <picture>
                         <img src="assets/img/new-yacht-2.jpg" srcset="assets/img/new-yacht-2@2x.jpg 2x" width="370"
@@ -293,7 +341,7 @@
                     <a href="#" class="new-yachts__more">Подробнее</a>
                 </div>
             </div>
-            <div class="new-yachts__item">
+            <div class="new-yachts__item" data-scroll>
                 <div class="new-yachts__img">
                     <picture>
                         <img src="assets/img/new-yacht-3.jpg" srcset="assets/img/new-yacht-3@2x.jpg 2x" width="370"
@@ -317,7 +365,7 @@
                     <a href="#" class="new-yachts__more">Подробнее</a>
                 </div>
             </div>
-            <div class="new-yachts__item">
+            <div class="new-yachts__item" data-scroll>
                 <div class="new-yachts__img">
                     <picture>
                         <img src="assets/img/new-yacht-4.jpg" srcset="assets/img/new-yacht-4@2x.jpg 2x" width="370"
@@ -341,7 +389,7 @@
                     <a href="#" class="new-yachts__more">Подробнее</a>
                 </div>
             </div>
-            <div class="new-yachts__item">
+            <div class="new-yachts__item" data-scroll>
                 <div class="new-yachts__img">
                     <picture>
                         <img src="assets/img/new-yacht-1.jpg" srcset="assets/img/new-yacht-1@2x.jpg 2x" width="370"
@@ -365,12 +413,12 @@
                     <a href="#" class="new-yachts__more">Подробнее</a>
                 </div>
             </div>
-            <div class="new-yachts__item">
+            <div class="new-yachts__item" data-scroll>
                 <div class="new-yachts__img">
                     <picture>
-                    <img src="assets/img/new-yacht-2.jpg" srcset="assets/img/new-yacht-2@2x.jpg 2x" width="370"
-                         height="310" alt="Motor Yacht ANASTASIA">
-                </picture>
+                        <img src="assets/img/new-yacht-2.jpg" srcset="assets/img/new-yacht-2@2x.jpg 2x" width="370"
+                             height="310" alt="Motor Yacht ANASTASIA">
+                    </picture>
                 </div>
                 <div class="new-yachts__info">
                     <h3 class="new-yachts__title">Motor Yacht ANASTASIA</h3>
@@ -389,12 +437,12 @@
                     <a href="#" class="new-yachts__more">Подробнее</a>
                 </div>
             </div>
-            <div class="new-yachts__item">
+            <div class="new-yachts__item" data-scroll>
                 <div class="new-yachts__img">
                     <picture>
-                    <img src="assets/img/new-yacht-3.jpg" srcset="assets/img/new-yacht-3@2x.jpg 2x" width="370"
-                         height="310" alt="Motor Yacht ANASTASIA">
-                </picture>
+                        <img src="assets/img/new-yacht-3.jpg" srcset="assets/img/new-yacht-3@2x.jpg 2x" width="370"
+                             height="310" alt="Motor Yacht ANASTASIA">
+                    </picture>
                 </div>
                 <div class="new-yachts__info">
                     <h3 class="new-yachts__title">Motor Yacht ANASTASIA</h3>
@@ -413,12 +461,12 @@
                     <a href="#" class="new-yachts__more">Подробнее</a>
                 </div>
             </div>
-            <div class="new-yachts__item">
+            <div class="new-yachts__item" data-scroll>
                 <div class="new-yachts__img">
                     <picture>
-                    <img src="assets/img/new-yacht-4.jpg" srcset="assets/img/new-yacht-4@2x.jpg 2x" width="370"
-                         height="310" alt="Motor Yacht ANASTASIA">
-                </picture>
+                        <img src="assets/img/new-yacht-4.jpg" srcset="assets/img/new-yacht-4@2x.jpg 2x" width="370"
+                             height="310" alt="Motor Yacht ANASTASIA">
+                    </picture>
                 </div>
                 <div class="new-yachts__info">
                     <h3 class="new-yachts__title">Motor Yacht ANASTASIA</h3>
@@ -438,32 +486,32 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="new-yachts__see-more btn btn--border-light-blue" >Смотреть все яхты</a>
+        <a href="#" class="new-yachts__see-more btn btn--border-light-blue">Смотреть все яхты</a>
     </div>
 
 </div>
 <div class="callback">
     <div class="callback__inner">
-        <h2>Есть вопросы? мы с вами свяжемся!</h2>
+        <h2 data-scroll>Есть вопросы? мы с вами свяжемся!</h2>
         <form action="get" class="callback__form" data-scroll>
-            <div class="callback__field-wrapper">
+            <div class="callback__field-wrapper" data-scroll>
                 <input type="text" class="callback__field field" id="name" required>
                 <label for="name">Name</label>
             </div>
-            <div class="callback__field-wrapper">
+            <div class="callback__field-wrapper" data-scroll>
                 <input type="email" class="callback__field field" id="email" required>
                 <label for="email">Email</label>
             </div>
-            <div class="callback__field-wrapper">
+            <div class="callback__field-wrapper" data-scroll>
                 <input type="tel" class="callback__field field" id="tel" required>
                 <label for="tel">096 34223442</label>
             </div>
-            <button class="callback__btn btn" type="submit">Отправить</button>
+            <button class="callback__btn  btn  btn--white" type="submit" data-scroll="">Отправить</button>
         </form>
     </div>
 </div>
 <div class="partners">
-    <h2 class="title-bottom-line">Наши партнеры</h2>
+    <h2 class="title-bottom-line" data-scroll>Наши партнеры</h2>
     <div class="partners__inner">
         <div class="partners__item">
             <img src="assets/img/svg/partners-icon-slack.svg" width="80" height="24" alt="slack">
@@ -487,9 +535,6 @@
         <div class="partners__item">
             <img src="assets/img/svg/partner-icon-adobe.svg" width="38" height="34" alt="adobe">
         </div>
-        <div class="partners__item">
-            <img src="assets/img/svg/partner-icon-google.svg" width="80" height="28" alt="google">
-        </div>
     </div>
 </div>
 <footer class="footer">
@@ -507,7 +552,8 @@
             <p class="footer__title-pay">Наши платежные системы</p>
             <div class="footer__img-pay">
                 <div class="footer__img"><img src="assets/img/visa-logo.svg" width="53" height="16" alt="visa"></div>
-                <div class="footer__img"><img src="assets/img/MasterCard_Logo.svg" width="50" height="28" alt="MasterCard"></div>
+                <div class="footer__img"><img src="assets/img/MasterCard_Logo.svg" width="50" height="28"
+                                              alt="MasterCard"></div>
             </div>
         </div>
         <div class="footer__contacts">
@@ -524,9 +570,12 @@
         <button class="form__close" type="button">close</button>
         <p class="form__title">Наш менеджер с вами свяжется не позже чем через 12 часов.</p>
         <div class="form__main">
-            <div class="form__field-wrapper"><input type="text" class="form__field" id="you-name" required><label for="you-name">Name</label></div>
-            <div class="form__field-wrapper"><input type="email" class="form__field" id="you-email" required><label for="you-email">Email</label></div>
-            <div class="form__field-wrapper"><input type="tel" class="form__field" id="you-tel" required><label for="you-tel">096 34223442</label></div>
+            <div class="form__field-wrapper"><input type="text" class="form__field" id="you-name" required><label
+                    for="you-name">Name</label></div>
+            <div class="form__field-wrapper"><input type="email" class="form__field" id="you-email" required><label
+                    for="you-email">Email</label></div>
+            <div class="form__field-wrapper"><input type="tel" class="form__field" id="you-tel" required><label
+                    for="you-tel">096 34223442</label></div>
             <button class="form__btn btn btn--primary" type="submit">Отправить</button>
         </div>
     </form>
@@ -540,8 +589,10 @@
             <span class="form__human-name">Andrei Fathutdinov</span>
         </p>
         <div class="form__main">
-            <div class="form__field-wrapper"><input type="email" class="form__field" id="you-email" required><label for="you-email">Email</label></div>
-            <div class="form__field-wrapper  form__field-wrapper--textarea"><textarea  class="form__field" id="message" placeholder="Текст сообщения"></textarea>
+            <div class="form__field-wrapper"><input type="email" class="form__field" id="you-email" required><label
+                    for="you-email">Email</label></div>
+            <div class="form__field-wrapper  form__field-wrapper--textarea"><textarea class="form__field" id="message"
+                                                                                      placeholder="Текст сообщения"></textarea>
                 <label for="message">Текст сообщения</label></div>
             <button class="form__btn btn btn--primary" type="submit">Отправить</button>
         </div>

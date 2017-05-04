@@ -78,7 +78,6 @@ img {
     background-color: transparent;
     border-color: #fff;
     color: #ffffff;
-
   }
   &--border-blue {
     border-color: $primary-color;
@@ -93,15 +92,175 @@ img {
       color: #fff;
     }
   }
+  &--white {
+    &:hover {
+      background-color: rgba(255, 255, 255, .85);
+    }
+  }
 }
 
 .burger {
   display: none;
 }
 
-.is-home {
-  .header {
-  }
+//menu toggle
+$button-width: 40px;
+$button-height: 40px;
+$bar-thickness: 2px;
+$button-pad: 12px;
+$button-trans-delay: 0.3s;
+
+.burger {
+  overflow: hidden;
+  position: absolute;
+  right: 30px;
+  top: 35px;
+  display: none;
+  width: $button-width;
+  height: $button-height;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 30;
+  transition: background $button-trans-delay;
+  cursor: pointer;
+}
+
+.burger:focus {
+  outline: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  top: ($button-height / 2) - ($bar-thickness / 2);
+  left: $button-pad;
+  right: $button-pad;
+  height: $bar-thickness;
+  background: rgb(255, 255, 255);
+}
+
+.burger span::before,
+.burger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: $bar-thickness;
+  background-color: $primary-color;
+  content: "";
+}
+
+.burger span::before {
+  top: -(($button-height / 2) - ($bar-thickness / 2) - $button-pad);
+}
+
+.burger span::after {
+  bottom: -(($button-height / 2) - ($bar-thickness / 2) - $button-pad);
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  top: 17px;
+  left: 9px;
+  right: 8px;
+  height: $bar-thickness;
+  background: $primary-color;
+}
+
+.burger span::before,
+.burger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: $bar-thickness;
+  background-color: $primary-color;
+  content: "";
+}
+
+.burger span::before {
+  top: -(($button-height / 2) - ($bar-thickness / 2) - $button-pad);
+}
+
+.burger span::after {
+  bottom: -(($button-height / 2) - ($bar-thickness / 2) - $button-pad);
+}
+
+.burger__htra.active span {
+  transform: rotate(180deg);
+}
+
+.burger__htra.active span::before,
+.burger__htra.active span::after {
+  width: 50%;
+}
+
+.burger__htra.active span::before {
+  top: 0;
+  transform: translateX(-$bar-thickness) translateY($bar-thickness/2) rotate(-45deg);
+}
+
+.burger__htra.active span::after {
+  bottom: 0;
+  transform: translateX(-$bar-thickness) translateY(-$bar-thickness/2) rotate(45deg);
+}
+
+.burger__htx {
+  border: 2px solid $primary-color;
+  background-color: transparent;
+}
+
+.burger__htx span {
+  transition: background 0 $button-trans-delay;
+}
+
+.burger__htx span::before,
+.burger__htx span::after {
+  transition-duration: $button-trans-delay, $button-trans-delay;
+  transition-delay: $button-trans-delay, 0;
+}
+
+.burger__htx span::before {
+  transition-property: top, transform;
+}
+
+.burger__htx span::after {
+  transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+
+.burger__htx.active span {
+  background: none;
+}
+
+.burger__htx.active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.burger__htx.active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.burger__htx.active span::before,
+.burger__htx.active span::after {
+  transition-delay: 0, $button-trans-delay;
+}
+
+.burger span,
+.burger span::before,
+.burger span::after {
+  background-color: $primary-color;
 }
 
 .header {
@@ -113,7 +272,6 @@ img {
 }
 
 .header__top {
-  //display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -133,7 +291,6 @@ img {
 .header__top-inner {
   @include container;
   display: flex;
-  //flex-wrap: wrap;
   align-items: center;
 }
 
@@ -148,11 +305,17 @@ img {
 
 }
 
+.menu__list-wrapper {
+  .header__lang,
+  .header__music {
+    display: none;
+  }
+}
+
 .menu__list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-right: 13px;
   .menu-item-has-children > a {
     &::before {
       content: '';
@@ -314,6 +477,14 @@ img {
 }
 
 .header__slider {
+  li {
+    &:nth-child(2) {
+      img {
+        filter: saturate(200%)
+      }
+    }
+
+  }
   font-size: 0;
   img {
     width: 100%;
@@ -369,6 +540,7 @@ img {
 
 .search {
   position: relative;
+  margin-bottom: 30px;
   padding: 58px 0;
   background-color: $primary-color;
   &--show-extended {
@@ -579,18 +751,19 @@ img {
 
 .charters {
   padding: 80px 0;
+  padding-top: 50px;
 }
 
 .charters__slide {
   position: relative;
   padding: 0 200px;
+
 }
 
 .charters__slider {
   position: relative;
   max-width: 1496px;
   width: 100%;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   z-index: 2;
@@ -605,7 +778,9 @@ img {
   top: 77px;
   max-width: 360px;
   height: 400px;
+  width: 200px;
   overflow: hidden;
+  filter: opacity(40%);
   &--back {
     left: 0;
     .charters__arrow {
@@ -649,6 +824,7 @@ img {
 .charters__img {
   flex: none;
   margin-right: 30px;
+  font-size: 0;
 }
 
 .charters__content {
@@ -781,12 +957,9 @@ img {
   margin-bottom: 30px;
   box-shadow: 4px 6px 10px rgba(13, 49, 122, 0.07);
   text-align: left;
+  z-index: 1;
   &:nth-child(4n) {
     margin-right: 0;
-  }
-  img {
-    width: 370px;
-    height: 310px;
   }
 }
 
@@ -877,7 +1050,6 @@ img {
 
 .callback__form {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -907,11 +1079,10 @@ img {
   font-family: Ubuntu;
   font-size: 18px;
   font-weight: 400;
-  &:focus {
-    & + label {
-      opacity: 0;
-    }
-  }
+}
+
+.callback__field:focus ~ label, .callback__field:valid + label {
+  opacity: 0;
 }
 
 .callback__btn {
@@ -960,6 +1131,9 @@ img {
   flex-wrap: wrap;
   flex-direction: column;
   max-height: 100px;
+  max-width: 315px;
+  margin-right: 20px;
+  width: 100%;
   margin-top: 30px;
   li {
     a {
@@ -980,6 +1154,7 @@ img {
 .footer__pay {
   align-self: flex-start;
   padding-top: 33px;
+  margin-right: 20px;
 }
 
 .footer__title-pay {
@@ -1043,6 +1218,8 @@ img {
   top: 0;
   left: 0;
   bottom: 0;
+  padding-right: 15px;
+  padding-left: 15px;
   background-color: rgba(5, 7, 7, 0.8);
   opacity: 0;
   z-index: 200;
@@ -1131,6 +1308,7 @@ img {
 .form__human-contacts {
   margin-bottom: 24px;
 }
+
 .form__human-prof {
   display: block;
   color: #697899;
@@ -1223,6 +1401,14 @@ img {
   width: 100%;
 }
 
+@media (max-width: 1599px) {
+  .new-yachts__item {
+    &:nth-child(4n) {
+      margin-right: 29px;
+    }
+  }
+}
+
 @media (max-width: 1661px) {
   .header__logo {
     flex: none;
@@ -1274,9 +1460,45 @@ img {
       }
     }
   }
+  .charters__slider {
+    flex-direction: column;
+    align-items: center;
+  }
+  .charters__img {
+    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 1199px) {
+  .new-yachts__item {
+    margin-right: 0;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    &:nth-child(odd) {
+      margin-right: 29px;
+    }
+  }
+  .partners {
+    padding-bottom: 100px;
+  }
+  .partners__item {
+    text-align: center;
+    width: 20%;
+    margin-bottom: 20px;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
 }
 
 @media (max-width: 1236px) {
+
   .search {
     padding: 38px 0;
     &--show-extended {
@@ -1311,13 +1533,164 @@ img {
   .search__btn {
     width: 140px;
   }
+  .places__item--center .places__item-title {
+    font-size: 43px;
+  }
+}
+
+@media (max-width: 1156px) {
+  .footer__menu {
+    order: -1;
+    width: 100%;
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-right: 0;
+    li {
+      margin-right: 10px;
+      &:nth-child(-n+3) {
+        margin-right: 0;
+      }
+      a {
+        padding: 0 15px;
+      }
+    }
+  }
+  .footer__pay {
+    margin-left: auto;
+  }
+  .footer__contacts {
+    margin-left: auto;
+  }
+  .footer__contacts {
+    p {
+      max-width: 220px;
+    }
+  }
+  .footer__img {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .footer__img-pay {
+    text-align: center;
+  }
 }
 
 @media (max-width: 1024px) {
+
+  .header {
+    padding: 0;
+  }
+  .header__top {
+    padding-right: 15px;
+    padding-left: 15px;
+    &--show-menu {
+      background-color: #fff;
+      .menu__list-wrapper {
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+      }
+    }
+    .header__music,
+    .header__lang {
+      display: none;
+    }
+  }
+  .header__logo {
+    position: relative;
+    z-index: 1;
+  }
+  .menu__list-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    overflow-y: scroll;
+    text-align: center;
+    font-size: 0;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all .7s;
+    .header__music,
+    .header__lang {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 0;
+    }
+    .header__music {
+      margin-right: 10px;
+    }
+  }
+  .menu__list {
+    padding-top: 95px;
+    display: block;
+    text-align: center;
+    li {
+      display: block;
+      a {
+        display: inline-block;
+        font-size: 16px;
+      }
+    }
+    &--show-submenu {
+    }
+  }
+
+  .menu__list > li > ul a {
+    padding-left: 15px;
+  }
+  .menu__list > li > ul {
+    position: static;
+    transform: none;
+    max-width: 270px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+    visibility: hidden;
+    max-height: 0;
+    transition: all .8s;
+  }
+  .menu__list > li:hover ul {
+    transform: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+  ul.menu__list--show-menu > li > ul {
+    margin-top: 20px;
+    padding: 15px 0;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-height: 400px;
+  }
+  .burger {
+    display: block;
+  }
+  .header__feedback {
+    font-size: 0;
+    width: 40px;
+    height: 40px;
+    margin-right: 60px;
+    margin-bottom: 0;
+    padding: 0;
+    border-radius: 50%;
+    background: transparent url(./../img/svg/feedback.svg) center no-repeat;
+    background-size: 25px 25px;
+    border: 2px solid $primary-color;
+    position: relative;
+    z-index: 1;
+    &:hover {
+      background-color: transparent;
+    }
+  }
   .search__inner {
     flex-wrap: wrap;
     justify-content: flex-start;
-
   }
   .search__input-wrapper {
     max-width: 50%;
@@ -1345,12 +1718,386 @@ img {
       }
       &--checkbox {
         flex: none;
-        max-width: 50%;
+        max-width: 100%;
         justify-content: space-between;
       }
       &:nth-child(4n) {
         margin-right: 0;
       }
     }
+  }
+  .search__input-wrapper--checkbox label {
+    margin-right: 10px;
+  }
+  .places__list {
+    flex-direction: column;
+  }
+  .places__wrapper {
+    &--monaco,
+    &--nise {
+      max-width: 100%;
+    }
+    &--bottom {
+      flex-direction: column;
+      .places__item {
+        &--cervo {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .places__item {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .places__item--center {
+    width: 100%;
+    img {
+      height: auto !important;
+      width: 100%;
+    }
+    .places__item-title {
+      font-size: 60px;
+    }
+  }
+  .callback__field-wrapper {
+    margin-right: 10px;
+  }
+  .charters {
+    padding-bottom: 20px;
+  }
+  .charters__arrow-wrapper {
+    display: none;
+  }
+  .charters__slide {
+    padding: 0 15px;
+  }
+  .charters__slider {
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 801px) {
+  .new-yachts__list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .new-yachts__item {
+    &:nth-child(odd) {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 796px) {
+  .footer__contacts {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .is-home {
+    padding-top: 60px;
+  }
+  .header__charter-wrap {
+    min-height: auto;
+    bottom: 74px;
+    &::before,
+    &::after {
+      display: none;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  .header__charter {
+    padding: 9px 33px;
+    &::before {
+      display: none;
+    }
+  }
+  .title-bottom-line {
+    margin-bottom: 27px;
+    font-size: 20px;
+  }
+  .search__inner {
+    flex-direction: column;
+  }
+  .callback__inner {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .callback__form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .callback__field-wrapper {
+    margin-bottom: 20px;
+  }
+  .callback h2 {
+    font-size: 20px;
+  }
+  .places__item-title {
+    font-size: 30px;
+    bottom: 5px;
+    left: 15px;
+  }
+  .places__item {
+    &--center {
+      .places__item-title {
+        font-size: 33px;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    }
+  }
+  .new-yachts {
+    padding-top: 30px;
+  }
+  .search__inner {
+    align-items: center;
+  }
+  .search--show-extended .search__input-wrapper {
+    max-width: 100%;
+    flex: none;
+    margin-right: 0;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  .search__input-wrapper {
+    flex: none;
+    margin-right: 0;
+    max-width: 100%;
+    &--checkbox label {
+      margin-right: 0;
+    }
+    &:nth-child(3n) {
+      margin-right: 0;
+      max-width: 100%;
+    }
+    &--checkbox {
+      flex-direction: column;
+
+    }
+  }
+
+  .search__btn-wrapper {
+    max-width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  .search__advanced {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+  .form {
+    margin-top: 20px;
+  }
+  .form__title {
+    font-size: 20px;
+  }
+  .form__human-prof,
+  .form__human-name {
+    font-size: 20px;
+  }
+  .form__field-wrapper {
+    max-width: 100%;
+  }
+  .form__btn {
+    max-width: 100%;
+  }
+  .form__close {
+    top: 15px;
+    right: 15px;
+  }
+  .partners {
+    padding: 30px 0;
+  }
+  .partners__inner {
+    justify-content: center;
+  }
+  .partners__item {
+    width: 47%;
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+  .footer__inner {
+    padding-bottom: 20px;
+    justify-content: center;
+  }
+  .footer__menu {
+    max-height: none;
+    order: 4;
+    margin-bottom: 0;
+  }
+  .footer__contacts {
+    order: 3;
+    margin-right: 0;
+  }
+  .footer__pay {
+    order: 4;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 524px) {
+  .footer__menu {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__logo {
+    margin-right: 0;
+  }
+  .footer__contacts {
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .burger {
+    right: 15px;
+  }
+  .partners__item {
+    width: 46%;
+  }
+  .header__top-inner {
+    padding: 0;
+  }
+}
+
+//animation on scroll
+@media (min-width: 1025px) {
+  .show-element {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .is-home {
+    .header__charter-wrap {
+      transition: all .70s ease-out;
+      opacity: 0;
+      transform: translateY(40px);
+      &::before,
+      &::after {
+        transition: .60s all .40s ease-out;
+        opacity: 0;
+      }
+      &::before {
+        transform: translateX(-60px);
+      }
+      &::after {
+        transform: translateX(60px);
+      }
+      &.show-element {
+        &::before,
+        &::after {
+          transform: none !important;
+          opacity: 1 !important;
+        }
+      }
+    }
+    .search {
+      transition: all .70s ease-out;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .title-bottom-line,
+    .callback__inner h2{
+      transition: all .70s ease-out;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .charters__arrow-wrapper {
+
+      opacity: 0;
+      transform: scale(.8);
+      &--back {
+        transition: .80s all .50s ease-out;
+      }
+      &--next {
+        transition: .80s all .50s ease-out;
+      }
+    }
+
+    .charters__img {
+      opacity: 0;
+      transform: scale(.8);
+      transition: .4s all .4s ease-out;
+    }
+    .charters__content h3 {
+      transition: all .50s ease-out;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .charters__text {
+      transition: all .70s ease-out;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .places__wrapper {
+      &--monaco {
+        .places__item {
+          transform: translateX(100%);
+        }
+      }
+      &--nise {
+        .places__item {
+          transform: translateX(-100%);
+        }
+      }
+      .places__item {
+        transition: all .70s ease-out;
+        opacity: 0;
+        .places__item-title {
+          opacity: 0;
+          transition: .70s  all 1s ease-out;
+        }
+      }
+    }
+    .places__item {
+      &--center {
+        position: relative;
+        z-index: 1;
+      }
+      &--cervo,
+      &--amalfi{
+        opacity: 0;
+        transform: scale(.8);
+        transition: all .7s ease-out;
+      }
+    }
+
+    .new-yachts__item {
+      transition: all .80s ease-out;
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    
+    
+    .callback__field-wrapper {
+      transition: all .6s;
+      opacity: 0;
+      transform: scale(.4);
+    }
+    .callback__btn {
+      opacity: 0;
+      transform: scale(.4);
+    }
+    .new-yachts__inner {
+      &::before {
+        top: 0;
+        transition: all .8s ease-out;
+      }
+      &.show-element {
+        &::before {
+          top: 155px;
+        }
+      }
+    }
+    
   }
 }
