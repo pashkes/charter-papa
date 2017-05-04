@@ -62,11 +62,18 @@ img {
   text-decoration: none;
   color: #017dfb;
   border: 2px solid transparent;
+  transition: all .40s ease-out;
   cursor: pointer;
   &:hover {
     text-decoration: none;
   }
-  transition: all .40s ease-out;
+  &--primary {
+    background-color: $primary-color;
+    color: #fff;
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
   &--border-white {
     background-color: transparent;
     border-color: #fff;
@@ -244,10 +251,14 @@ img {
     background-color: darken($primary-color, 10%);
     color: #fff;
     text-decoration: none;
+    &::before {
+      border-color: darken($primary-color, 10%);
+    }
   }
 }
 
 .header__music {
+  position: relative;
   display: block;
   flex: none;
   width: 51px;
@@ -257,6 +268,34 @@ img {
   border-radius: 50%;
   font-size: 0;
   background: $primary-color url(./../img/svg/icon-music.png) center no-repeat;
+  z-index: 10;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 50%;
+    animation: pulse 2s infinite ease-out;
+    z-index: 1;
+    border: 5px solid $primary-color;
+    transition: all .35s;
+
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  38.333% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+
+  }
 }
 
 .header__lang {
@@ -891,15 +930,18 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .partners__item {
   margin-right: 20px;
   &:last-child {
     margin-right: 0;
   }
 }
+
 .footer {
   background-color: $secondary-color;
 }
+
 .footer__inner {
   @include container;
   display: flex;
@@ -918,7 +960,7 @@ img {
   flex-wrap: wrap;
   flex-direction: column;
   max-height: 100px;
- margin-top: 30px;
+  margin-top: 30px;
   li {
     a {
       font-size: 16px;
@@ -939,6 +981,7 @@ img {
   align-self: flex-start;
   padding-top: 33px;
 }
+
 .footer__title-pay {
   margin-bottom: 20px;
   color: #ffffff;
@@ -960,10 +1003,10 @@ img {
   border-radius: 5px;
   &:first-child {
     border: 1px solid #fff;
-    background: #fff linear-gradient( to top, #cacaca, transparent);
+    background: #fff linear-gradient(to top, #cacaca, transparent);
   }
   &:last-child {
-    background-color:#2e73a3;
+    background-color: #2e73a3;
     border: 1px solid #2c92cb;
     img {
       height: 28px;
@@ -977,6 +1020,7 @@ img {
     padding-bottom: 4px;
   }
 }
+
 .footer__contacts {
   align-self: stretch;
   background-color: #002b4a;
@@ -987,10 +1031,198 @@ img {
     font-size: 16px;
   }
 }
+
 .footer__tel {
   color: #fff;
   font-size: 16px;
 }
+
+.overlay {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(5, 7, 7, 0.8);
+  opacity: 0;
+  z-index: 200;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  overflow-y: scroll;
+  &.overlay--show {
+    visibility: visible;
+    opacity: 1;
+    .form {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1);
+      transition: all 0.35s cubic-bezier(0, 0.88, 0.34, 1.15) 0.2s;
+    }
+  }
+}
+
+.form {
+  position: relative;
+  max-width: 670px;
+  width: 100%;
+  margin: 100px auto 50px auto;
+  padding: 30px;
+  padding-top: 47px;
+  padding-bottom: 60px;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.65);
+  transition: all 0.15s ease-in-out 0s;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 131, 217, 0.4);
+  border-radius: 10px;
+  background-color: #fdfefe;
+  z-index: 300;
+  &--charters {
+    .form__title {
+      max-width: 488px;
+    }
+  }
+}
+
+.form__close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  font-size: 0;
+  cursor: pointer;
+  transition: all .4s;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background-color: #adb6c7;
+    transform: translateX(-50%);
+  }
+  &::before {
+    transform: translateX(-50%) rotate(45deg);
+  }
+  &::after {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+
+.form__title {
+  max-width: 393px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 26px;
+  color: #697899;
+  font-size: 24px;
+}
+
+.form__human-contacts {
+  margin-bottom: 24px;
+}
+.form__human-prof {
+  display: block;
+  color: #697899;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.form__human-name {
+  color: #697899;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.form__field-wrapper {
+  position: relative;
+  max-width: 327px;
+  margin-right: auto;
+  margin-left: auto;
+  label {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-25px);
+    transition: all .4s;
+  }
+  &--textarea {
+    .form__field {
+      border-radius: 30px;
+      resize: none;
+      min-height: 130px;
+    }
+    label {
+      display: none;
+    }
+  }
+}
+
+.form__field {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px 30px;
+  border: 1px solid $primary-color;
+  background-color: #f7fbfd;
+  color: #697899;
+  font-size: 16px;
+  border-radius: 40px;
+  &:focus {
+    background-color: #fff;
+  }
+  &::-webkit-input-placeholder {
+    color: #c2c8d6;
+    font-size: 16px;
+  }
+  &::-moz-placeholder {
+    color: #c2c8d6;
+    font-size: 16px;
+  }
+  &:-moz-placeholder {
+    color: #c2c8d6;
+    font-size: 16px;
+  }
+  &:-ms-input-placeholder {
+    color: #c2c8d6;
+    font-size: 16px;
+  }
+  &:focus::-webkit-input-placeholder {
+    color: transparent
+  }
+  &:focus::-moz-placeholder {
+    color: transparent
+  }
+  &:focus:-moz-placeholder {
+    color: transparent
+  }
+  &:focus:-ms-input-placeholder {
+    color: transparent
+  }
+}
+
+.form__field:focus ~ label, .form__field:valid + label {
+  transform: translateY(-55px);
+  font-size: 12px;
+  color: #8bcb00;
+}
+
+.form__btn {
+  max-width: 327px;
+  width: 100%;
+}
+
 @media (max-width: 1661px) {
   .header__logo {
     flex: none;
