@@ -9,9 +9,10 @@ $(function () {
   if ($('.is-home').length) {
     $('.header__slider.single-item').slick({
       autoplay: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 4000,
       fade: true,
-      arrows: false
+      arrows: false,
+      pauseOnHover: false
     });
 
     $('.js-charters-slider.single-item').slick({
