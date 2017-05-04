@@ -3452,3 +3452,95 @@ img {
     width: 46%; }
   .header__top-inner {
     padding: 0; } }
+
+@media (min-width: 1025px) {
+  .show-element {
+    -webkit-transform: none !important;
+            transform: none !important;
+    opacity: 1 !important; }
+  .is-home .header__charter-wrap {
+    transition: all .70s ease-out;
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px); }
+    .is-home .header__charter-wrap::before, .is-home .header__charter-wrap::after {
+      transition: .60s all .40s ease-out;
+      opacity: 0; }
+    .is-home .header__charter-wrap::before {
+      -webkit-transform: translateX(-60px);
+              transform: translateX(-60px); }
+    .is-home .header__charter-wrap::after {
+      -webkit-transform: translateX(60px);
+              transform: translateX(60px); }
+    .is-home .header__charter-wrap.show-element::before, .is-home .header__charter-wrap.show-element::after {
+      -webkit-transform: none !important;
+              transform: none !important;
+      opacity: 1 !important; }
+  .is-home .search {
+    transition: all .70s ease-out;
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px); }
+  .is-home .title-bottom-line,
+  .is-home .callback__inner h2 {
+    transition: all .70s ease-out;
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px); }
+  .is-home .charters__arrow-wrapper {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8); }
+    .is-home .charters__arrow-wrapper--back {
+      transition: .80s all .50s ease-out; }
+    .is-home .charters__arrow-wrapper--next {
+      transition: .80s all .50s ease-out; }
+  .is-home .charters__img {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    transition: .4s all .4s ease-out; }
+  .is-home .charters__content h3 {
+    transition: all .50s ease-out;
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px); }
+  .is-home .charters__text {
+    transition: all .70s ease-out;
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px); }
+  .is-home .places__wrapper--monaco .places__item {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+  .is-home .places__wrapper--nise .places__item {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); }
+  .is-home .places__wrapper .places__item {
+    transition: all .70s ease-out;
+    opacity: 0; }
+    .is-home .places__wrapper .places__item .places__item-title {
+      opacity: 0;
+      transition: .70s  all 1s ease-out; }
+  .is-home .places__item--center {
+    position: relative;
+    z-index: 1; }
+  .is-home .places__item--cervo, .is-home .places__item--amalfi {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    transition: all .7s ease-out; }
+  .is-home .new-yachts__item {
+    transition: all .80s ease-out;
+    opacity: 0;
+    -webkit-transform: translateY(60px);
+            transform: translateY(60px); }
+  .is-home .callback__field-wrapper {
+    transition: all .6s;
+    opacity: 0;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4); }
+  .is-home .callback__btn {
+    opacity: 0;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4); } }

@@ -147,3 +147,17 @@ $(window).on('orientationchange resize', function () {
     $('.js-charters-slider.single-item').slick('resize');
   }
 });
+
+//animation on scroll
+document.addEventListener('DOMContentLoaded', function () {
+  var trigger = new ScrollTrigger({
+    toggle: {
+      visible: 'show-element'
+    },
+    offset: {
+      x: 0,
+      y: 150
+    },
+    once: true
+  }, document.body, window);
+});
