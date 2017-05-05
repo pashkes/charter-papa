@@ -9,14 +9,15 @@ $(function () {
   var slider = $('.js-charters-slider.single-item');
   var isFirst = true; // Флаг для проверки на предзагрузку
 
+  slider.on('afterChange', setArrowsBackground);
   function setArrowsBackground() {
-    // $('.charters__arrow-wrapper--back'').animate({ opacity: 0 }, 100);
-    // $('.charters__arrow-wrapper--next').animate({ opacity: 0 }, 100);
+    $('.charters__arrow-wrapper--back').animate({ opacity: 0 }, 100);
+    $('.charters__arrow-wrapper--next').animate({ opacity: 0 }, 100);
 
 
     var currentSlide = isFirst ? 0 : slider.slick('slickCurrentSlide');
     isFirst = false; // Сеттим в false
-    var slides = slider.find('li:not(.slick-cloned) .charters__img img');
+    var slides = slider.find('li:not(.slick-cloned) img');
     var prevSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
     var nextSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
     var s = slider.slick('getSlick');
@@ -27,8 +28,8 @@ $(function () {
     $('.charters__arrow-wrapper--back').css('backgroundImage', 'url("' + prev + '")');
     $('.charters__arrow-wrapper--next').css('backgroundImage', 'url("' + next + '")');
 
-    // $('.charters__arrow-wrapper--back').animate({ opacity: 1 }, 600);
-    // $('.charters__arrow-wrapper--next').animate({ opacity: 1 }, 600);
+    $('.charters__arrow-wrapper--back').animate({ opacity: 1 }, 600);
+    $('.charters__arrow-wrapper--next').animate({ opacity: 1 }, 600);
   }
 
   setTimeout(setArrowsBackground, 0);
