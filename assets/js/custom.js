@@ -3,7 +3,35 @@
 /**
  * Document ready functions
  */
+
 $(function () {
+
+  var slider = $('.js-charters-slider.single-item');
+  var isFirst = true; // Флаг для проверки на предзагрузку
+
+  function setArrowsBackground() {
+    // $('.charters__arrow-wrapper--back'').animate({ opacity: 0 }, 100);
+    // $('.charters__arrow-wrapper--next').animate({ opacity: 0 }, 100);
+
+
+    var currentSlide = isFirst ? 0 : slider.slick('slickCurrentSlide');
+    isFirst = false; // Сеттим в false
+    var slides = slider.find('li:not(.slick-cloned) .charters__img img');
+    var prevSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+    var nextSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+    var s = slider.slick('getSlick');
+    var next = slides[nextSlide].currentSrc;
+    var prev = slides[prevSlide].currentSrc;
+    console.log(next);
+    console.log(prev);
+    $('.charters__arrow-wrapper--back').css('backgroundImage', 'url("' + prev + '")');
+    $('.charters__arrow-wrapper--next').css('backgroundImage', 'url("' + next + '")');
+
+    // $('.charters__arrow-wrapper--back').animate({ opacity: 1 }, 600);
+    // $('.charters__arrow-wrapper--next').animate({ opacity: 1 }, 600);
+  }
+
+  setTimeout(setArrowsBackground, 0);
 
   //slider Header home page
   if ($('.is-home').length) {
@@ -15,10 +43,10 @@ $(function () {
       pauseOnHover: false
     });
 
-    var sliderCharters = $('.js-charters-slider.single-item');
-        sliderCharters.slick({
-      prevArrow: $('.charters__arrow-wrapper--back .charters__arrow'),
-      nextArrow: $('.charters__arrow-wrapper--next .charters__arrow'),
+    slider.slick({
+      prevArrow: $('.charters__arrow-wrapper--back'),
+      nextArrow: $('.charters__arrow-wrapper--next'),
+          initialSlide: 0,
       responsive: [
         {
           breakpoint: 1024,
@@ -27,9 +55,6 @@ $(function () {
       ]
     });
 
-    $('.js-charters-slider.single-item').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-      console.log(nextSlide);
-    });
 
     //show feedback
     var bntFeedback = $('.js-feedback-btn'),
