@@ -2,7 +2,7 @@
 -------------------------------------------------------------- */
 /* Fonts
 -------------------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,700");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,500,700");
 /* Mixins
 -------------------------------------------------------------- */
 *,
@@ -1703,6 +1703,12 @@ a.ui-button:active,
   cursor: pointer; }
 
 /* Slider */
+.charter__slide-small .slick-track {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center; }
+
 .slick-slider {
   position: relative;
   display: block;
@@ -1789,7 +1795,13 @@ a.ui-button:active,
 body {
   font: 18px/1.66 'Ubuntu', Arial sans-serif;
   color: #5e6e90;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  min-height: 100vh; }
 
 h2 {
   color: rgba(105, 120, 153, 0.4);
@@ -1844,6 +1856,16 @@ img {
   cursor: pointer; }
   .btn:hover {
     text-decoration: none; }
+  .btn--orange {
+    color: #000000;
+    padding-left: 62px;
+    text-align: left;
+    background: #ffce23 url(./../img/svg/icon-shopping-cart.svg) 23px 14px no-repeat;
+    background-size: 20px 20px; }
+    .btn--orange:hover {
+      background-color: #efba00; }
+    .btn--orange:active {
+      background-color: #d6a600; }
   .btn--primary {
     background-color: #0083d9;
     color: #fff; }
@@ -2019,7 +2041,6 @@ img {
   overflow: hidden; }
 
 .header__top {
-  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -2033,10 +2054,15 @@ img {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.18); }
 
+.home .header__top {
+  position: fixed; }
+
 .header__top-inner {
-  max-width: 1619px;
+  max-width: 1599px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
+  max-width: 1619px;
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -2154,7 +2180,8 @@ img {
   margin-right: 20px;
   border-radius: 50%;
   font-size: 0;
-  background: #0083d9 url(./../img/svg/icon-music.png) center no-repeat;
+  background: #0083d9 url(./../img/svg/icon-music.svg) center no-repeat;
+  background-size: 15px 16px;
   z-index: 10; }
   .header__music::before {
     content: '';
@@ -2257,7 +2284,6 @@ img {
 
 .search {
   position: relative;
-  margin-bottom: 30px;
   padding: 58px 0;
   background-color: #0083d9; }
   .search--show-extended .search__advanced {
@@ -2307,7 +2333,8 @@ img {
   align-self: center; }
 
 .search__inner {
-  max-width: 1619px;
+  max-width: 1599px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
   max-width: 1602px;
@@ -2434,11 +2461,74 @@ img {
     background: url(./../img/svg/icon-dollar.svg) 0 0 no-repeat; }
 
 .search__btn {
-  width: 187px; }
+  width: 187px;
+  padding-right: 78px;
+  text-align: right; }
+  .search__btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    margin-top: -8px;
+    width: 17px;
+    height: 17px;
+    background-image: url(./../img/svg/icon-search.svg);
+    background-size: 17px 17px; }
+
+.page-top {
+  background-color: #edf7f9; }
+
+.page-top__inner {
+  max-width: 1599px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  text-align: left;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center; }
+  .page-top__inner h2 {
+    color: #697899;
+    font-size: 36px;
+    font-weight: 500;
+    text-transform: capitalize; }
+  .page-top__inner + .catalog {
+    padding-top: 0; }
+
+.breadcrumb {
+  text-align: left;
+  font-size: 0; }
+  .breadcrumb span {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    color: #0083d9;
+    font-size: 18px; }
+  .breadcrumb a {
+    display: block;
+    padding-right: 20px;
+    color: #888f9b;
+    transition: all .35s ease-out; }
+    .breadcrumb a::before {
+      content: "/\00a0";
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      color: #888f9b;
+      font-size: inherit;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+    .breadcrumb a:hover {
+      color: #002b4a;
+      text-decoration: underline; }
 
 .charters {
-  padding: 80px 0;
-  padding-top: 50px; }
+  padding: 80px 0; }
 
 .charters__slide {
   position: relative;
@@ -2522,6 +2612,126 @@ img {
   max-width: 207px;
   width: 100%; }
 
+.charter__top {
+  position: relative; }
+  .charter__top::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+    left: -50px;
+    height: 1px;
+    background-color: #c3dee3; }
+
+.charter {
+  background-color: #edf7f9;
+  padding: 0 20px; }
+
+.charter__inner {
+  max-width: 1599px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 1570px;
+  box-shadow: 4px 6px 25px rgba(13, 49, 122, 0.14);
+  background-color: #fff;
+  padding: 44px 50px 44px 50px; }
+
+.charter__title {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-bottom: 24px; }
+  .charter__title h2 {
+    margin-right: 22px;
+    color: #18387d;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: capitalize; }
+  .charter__title .stars li {
+    margin-bottom: 0; }
+
+.charter__slider-big {
+  position: relative;
+  max-width: 612px;
+  margin-right: 40px; }
+
+.charter__slide-small {
+  position: absolute;
+  right: 31px;
+  left: 31px;
+  bottom: 31px; }
+  .charter__slide-small .slick-track {
+    -webkit-transform: none !important;
+            transform: none !important; }
+  .charter__slide-small li {
+    width: 11% !important;
+    margin-right: 9px;
+    font-size: 0; }
+    .charter__slide-small li:last-child {
+      margin-right: 0; }
+
+.charter__top-inner {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap; }
+
+.charter__detail {
+  margin-right: 20px; }
+  .charter__detail tr td {
+    text-transform: capitalize;
+    vertical-align: middle;
+    padding: 3px 0; }
+    .charter__detail tr td:first-child {
+      width: 200px;
+      color: #697899;
+      font-weight: 500; }
+
+.charter__info {
+  max-width: 260px;
+  width: 100%;
+  background-color: #0083d9;
+  margin-left: auto; }
+
+.charter__info {
+  padding: 34px 18px 24px 18px;
+  color: #fff;
+  text-align: center; }
+
+.charter__header {
+  font-weight: 700;
+  margin-bottom: 20px; }
+
+.charter__price {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 16px; }
+
+.charter__offers {
+  font-size: 16px; }
+
+.charter__to-order {
+  margin-bottom: 24px; }
+
+.charters__tags {
+  padding: 33px 0; }
+  .charters__tags span {
+    color: #697899; }
+
+.charters__desc {
+  padding: 35px 0; }
+  .charters__desc h3 {
+    margin-bottom: 24px;
+    color: #18387d;
+    font-size: 22px; }
+
+.charters__detail-item {
+  margin-bottom: 25px; }
+  .charters__detail-item p:not(:last-child) {
+    margin-bottom: 30px; }
+
 .places {
   padding: 0 30px; }
 
@@ -2581,26 +2791,32 @@ img {
   font-size: 36px;
   color: #fff; }
 
-.new-yachts {
+.catalog {
   position: relative;
-  padding-top: 95px; }
+  background-color: #edf7f9; }
 
-.new-yachts__inner {
+.home .catalog {
+  padding-top: 95px;
+  background-color: #fff; }
+
+.home .catalog__inner::before {
+  content: '';
+  position: absolute;
+  top: 155px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #edf7f9; }
+
+.catalog__inner {
   position: relative;
   padding-bottom: 64px;
   text-align: center; }
-  .new-yachts__inner::before {
-    content: '';
-    position: absolute;
-    top: 155px;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-color: #edf7f9; }
 
-.new-yachts__list {
+.catalog__list {
   position: relative;
-  max-width: 1619px;
+  max-width: 1599px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
   display: -webkit-box;
@@ -2610,7 +2826,7 @@ img {
           justify-content: center;
   margin-bottom: 20px; }
 
-.new-yachts__item {
+.catalog__item {
   position: relative;
   max-width: 370px;
   width: 100%;
@@ -2621,17 +2837,39 @@ img {
   box-shadow: 4px 6px 10px rgba(13, 49, 122, 0.07);
   text-align: left;
   z-index: 1; }
-  .new-yachts__item:nth-child(4n) {
+  .catalog__item:nth-child(4n) {
     margin-right: 0; }
 
-.new-yachts__img {
+.catalog__price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 186px;
+  padding-left: 46px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background-color: #ffffff;
+  color: #0083d9;
+  font-size: 22px; }
+  .catalog__price::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    width: 50px;
+    -webkit-transform: skewX(20deg);
+            transform: skewX(20deg); }
+
+.catalog__img {
   font-size: 0; }
 
-.new-yachts__info {
+.catalog__info {
   padding: 20px 53px 32px 32px;
   background-color: #fff; }
 
-.new-yachts__title {
+.catalog__title {
   margin-bottom: 16px;
   color: #697899;
   font-size: 22px; }
@@ -2646,20 +2884,49 @@ img {
     margin-right: 7px;
     margin-bottom: 15px;
     vertical-align: top;
-    background: url(./../img/svg/icon-star.png) center no-repeat; }
+    background: url(./../img/svg/star.svg) center no-repeat;
+    background-size: 15px 15px; }
 
-.new-yachts__size {
+.catalog__size {
   font-weight: 700; }
 
-.new-yachts__desc {
+.catalog__desc {
   margin-bottom: 3px; }
 
-.new-yachts__more:hover {
+.catalog__more:hover {
   color: #00558d; }
 
-.new-yachts__see-more {
+.catalog__see-more {
   margin: 0 auto;
   padding: 9px 33px; }
+
+.pagination {
+  position: relative;
+  display: inline-block;
+  font-size: 0; }
+  .pagination li {
+    display: inline-block;
+    width: 51px;
+    height: 51px;
+    margin-right: 10px;
+    line-height: 51px;
+    vertical-align: middle;
+    box-shadow: 4px 6px 10px rgba(13, 49, 122, 0.07);
+    background-color: #ffffff;
+    border-radius: 50%; }
+    .pagination li:last-child {
+      margin-right: 0; }
+    .pagination li.active {
+      background-color: #0083d9;
+      box-shadow: none; }
+      .pagination li.active a {
+        color: #ffffff; }
+  .pagination a {
+    display: block;
+    font-size: 18px;
+    color: #017dfb; }
+    .pagination a:hover {
+      text-decoration: none; }
 
 .callback {
   background: #005fa2 url(./../img/feedback-bg.jpg) center no-repeat;
@@ -2691,7 +2958,8 @@ img {
       background-image: url(./../img/svg/line-white.png); }
 
 .callback__inner {
-  max-width: 1619px;
+  max-width: 1599px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
   padding-top: 60px;
@@ -2741,7 +3009,8 @@ img {
   padding-bottom: 135px; }
 
 .partners__inner {
-  max-width: 1619px;
+  max-width: 1599px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
   display: -webkit-box;
@@ -2762,10 +3031,12 @@ img {
     margin-right: 0; }
 
 .footer {
-  background-color: #003e6b; }
+  background-color: #003e6b;
+  margin-top: auto; }
 
 .footer__inner {
-  max-width: 1619px;
+  max-width: 1599px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 16px;
   display: -webkit-box;
@@ -3014,8 +3285,14 @@ img {
   width: 100%; }
 
 @media (max-width: 1599px) {
-  .new-yachts__item:nth-child(4n) {
+  .catalog__item:nth-child(4n) {
     margin-right: 29px; } }
+
+@media (max-width: 1515px) {
+  .charter__slider-big {
+    max-width: 332px; }
+  .charter__slide-small li {
+    width: 9.6% !important; } }
 
 @media (max-width: 1661px) {
   .header__logo {
@@ -3067,13 +3344,13 @@ img {
     margin-left: auto; } }
 
 @media (max-width: 1199px) {
-  .new-yachts__item {
+  .catalog__item {
     margin-right: 0; }
-    .new-yachts__item:nth-child(3n) {
+    .catalog__item:nth-child(3n) {
       margin-right: 0; }
-    .new-yachts__item:nth-child(4n) {
+    .catalog__item:nth-child(4n) {
       margin-right: 0; }
-    .new-yachts__item:nth-child(odd) {
+    .catalog__item:nth-child(odd) {
       margin-right: 29px; }
   .partners {
     padding-bottom: 100px; }
@@ -3085,6 +3362,15 @@ img {
       margin-right: 0; } }
 
 @media (max-width: 1236px) {
+  .charter__top-inner {
+    flex-wrap: wrap; }
+  .charter__slider {
+    width: 100%;
+    margin-bottom: 20px; }
+  .charter__slider-big {
+    max-width: 612px;
+    margin-left: auto;
+    margin-right: auto; }
   .search {
     padding: 38px 0; }
     .search--show-extended .search__input-wrapper {
@@ -3109,6 +3395,10 @@ img {
     font-size: 15px; }
   .search__btn {
     width: 140px; }
+    .search__btn::before {
+      right: 30px; }
+  .charter__slide-small li {
+    width: 11% !important; }
   .places__item--center .places__item-title {
     font-size: 43px; } }
 
@@ -3266,6 +3556,21 @@ img {
       margin-right: 0; }
   .search__input-wrapper--checkbox label {
     margin-right: 10px; }
+  .charter__top-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column; }
+  .charter__detail {
+    margin-right: 0;
+    margin-bottom: 30px; }
+  .charter__title {
+    flex-wrap: wrap; }
+    .charter__title h2 {
+      text-align: left; }
+  .page-top__inner h2 {
+    font-size: 26px; }
+  .charter__info {
+    margin-right: auto; }
   .places__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3300,14 +3605,14 @@ img {
     padding-bottom: 30px; } }
 
 @media (max-width: 801px) {
-  .new-yachts__list {
+  .catalog__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             flex-direction: column;
     -webkit-box-align: center;
                 -ms-grid-row-align: center;
             align-items: center; }
-  .new-yachts__item:nth-child(odd) {
+  .catalog__item:nth-child(odd) {
     margin-right: 0; } }
 
 @media (max-width: 796px) {
@@ -3315,7 +3620,7 @@ img {
     margin-right: 0; } }
 
 @media (max-width: 768px) {
-  .is-home {
+  .home {
     padding-top: 60px; }
   .header__charter-wrap {
     min-height: auto;
@@ -3357,7 +3662,7 @@ img {
     font-size: 33px;
     padding-right: 15px;
     padding-left: 15px; }
-  .new-yachts {
+  .catalog {
     padding-top: 30px; }
   .search__inner {
     -webkit-box-align: center;
@@ -3413,6 +3718,11 @@ img {
     right: 15px; }
   .partners {
     padding: 30px 0; }
+  .charter__inner {
+    padding: 0 20px; }
+  .charter__top::before {
+    right: -20px;
+    left: -20px; }
   .partners__inner {
     -webkit-box-pack: center;
             justify-content: center; }
@@ -3457,79 +3767,90 @@ img {
     right: 15px; }
   .partners__item {
     width: 46%; }
+  .charter__title h2 {
+    font-size: 20px; }
+  .charter__detail {
+    font-size: 16px; }
+  .page-top__inner h2 {
+    font-size: 25px; }
   .header__top-inner {
-    padding: 0; } }
+    padding: 0; }
+  .charter__slide-small {
+    position: absolute;
+    right: 11px;
+    left: 11px;
+    bottom: 11px; } }
 
 @media (min-width: 1025px) {
   .show-element {
     -webkit-transform: none !important;
             transform: none !important;
     opacity: 1 !important; }
-  .is-home .header__charter-wrap {
+  .home .header__charter-wrap {
     transition: all .70s ease-out;
     opacity: 0;
     -webkit-transform: translateY(40px);
             transform: translateY(40px); }
-    .is-home .header__charter-wrap::before, .is-home .header__charter-wrap::after {
+    .home .header__charter-wrap::before, .home .header__charter-wrap::after {
       transition: .60s all .40s ease-out;
       opacity: 0; }
-    .is-home .header__charter-wrap::before {
+    .home .header__charter-wrap::before {
       -webkit-transform: translateX(-60px);
               transform: translateX(-60px); }
-    .is-home .header__charter-wrap::after {
+    .home .header__charter-wrap::after {
       -webkit-transform: translateX(60px);
               transform: translateX(60px); }
-    .is-home .header__charter-wrap.show-element::before, .is-home .header__charter-wrap.show-element::after {
+    .home .header__charter-wrap.show-element::before, .home .header__charter-wrap.show-element::after {
       -webkit-transform: none !important;
               transform: none !important;
       opacity: 1 !important; }
-  .is-home .search {
+  .home .search {
     transition: all .70s ease-out;
     opacity: 0;
     -webkit-transform: translateY(40px);
             transform: translateY(40px); }
-  .is-home .title-bottom-line,
-  .is-home .callback__inner h2 {
+  .home .title-bottom-line,
+  .home .callback__inner h2 {
     transition: all .70s ease-out;
     opacity: 0;
     -webkit-transform: translateY(40px);
             transform: translateY(40px); }
-  .is-home .places__wrapper--monaco .places__item {
+  .home .places__wrapper--monaco .places__item {
     -webkit-transform: translateX(100%);
             transform: translateX(100%); }
-  .is-home .places__wrapper--nise .places__item {
+  .home .places__wrapper--nise .places__item {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%); }
-  .is-home .places__wrapper .places__item {
+  .home .places__wrapper .places__item {
     transition: all .70s ease-out;
     opacity: 0; }
-    .is-home .places__wrapper .places__item .places__item-title {
+    .home .places__wrapper .places__item .places__item-title {
       opacity: 0;
-      transition: .70s  all 1s ease-out; }
-  .is-home .places__item--center {
+      transition: .70s all 1s ease-out; }
+  .home .places__item--center {
     position: relative;
     z-index: 1; }
-  .is-home .places__item--cervo, .is-home .places__item--amalfi {
+  .home .places__item--cervo, .home .places__item--amalfi {
     opacity: 0;
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
     transition: all .7s ease-out; }
-  .is-home .new-yachts__item {
+  .home .catalog__item {
     transition: all .80s ease-out;
     opacity: 0;
     -webkit-transform: translateY(60px);
             transform: translateY(60px); }
-  .is-home .callback__field-wrapper {
+  .home .callback__field-wrapper {
     transition: all .6s;
     opacity: 0;
     -webkit-transform: scale(0.4);
             transform: scale(0.4); }
-  .is-home .callback__btn {
+  .home .callback__btn {
     opacity: 0;
     -webkit-transform: scale(0.4);
             transform: scale(0.4); }
-  .is-home .new-yachts__inner::before {
+  .home .catalog__inner::before {
     top: 0;
     transition: all .8s ease-out; }
-  .is-home .new-yachts__inner.show-element::before {
+  .home .catalog__inner.show-element::before {
     top: 155px; } }
