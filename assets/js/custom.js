@@ -5,7 +5,35 @@
  */
 
 $(function () {
+  var navPos, winPos, navHeight;
 
+  function refreshVar() {
+    navPos = $('.header__top').offset().top;
+    navHeight = $('.header__top').outerHeight(true);
+  }
+  if ($('body:not(.home)').length) {
+    refreshVar();
+    $(window).resize(refreshVar);
+  }
+
+
+
+  $('<div class="clone-nav"></div>').insertBefore('.header__top').css('height', navHeight).hide();
+
+  $(window).scroll(function() {
+    winPos = $(window).scrollTop();
+    if ($('body:not(.home)').length){
+      if (winPos >= navPos) {
+        $('.header__top').addClass('fixed header__top--scroll');
+        $('.clone-nav').show();
+      }
+      else {
+        $('.header__top').removeClass('fixed header__top--scroll');
+        $('.clone-nav').hide();
+      }
+    }
+
+  });
 
 
 
@@ -87,8 +115,6 @@ $(function () {
     var s = slider.slick('getSlick');
     var next = slides[nextSlide].currentSrc;
     var prev = slides[prevSlide].currentSrc;
-    console.log(next);
-    console.log(prev);
     $('.charters__arrow-wrapper--back').css('backgroundImage', 'url("' + prev + '")');
     $('.charters__arrow-wrapper--next').css('backgroundImage', 'url("' + next + '")');
 
@@ -175,18 +201,9 @@ $(function () {
 
 });
 
-function offsetSearch() {
-  var headerHeight = $('.header__top').outerHeight();
-  var search = $('.search');
-  headerTop.css('position','fixed');
-  search.css('margin-top', headerHeight);
-}
 
 //equal center img height on places
 $(window).on('resize load', function () {
-  if ($('body:not(.home)').length){
-    offsetSearch();
-  }
   var imgHeight = $('.places__wrapper--monaco').outerHeight();
   $('.places__item--center img').css('height', imgHeight)
 });
@@ -229,3 +246,33 @@ document.addEventListener('DOMContentLoaded', function () {
     once: true
   }, document.body, window);
 });
+
+if($('.map').length) {
+google.maps.event.addDomListener(window, 'load', mapInitialize);
+}
+
+function mapInitialize() {
+  $(".contacts__map").each(function(){
+    var thisEl = $(this),
+        el = thisEl.find(".map"),
+        elId = el.attr("id"),
+        lat = parseFloat(el.attr("data-lat")),
+        lng = parseFloat(el.attr("data-lng")),
+        mapzoom = parseInt(el.attr("data-size")),
+        mapOptions = {
+          zoom: mapzoom,
+          center: new google.maps.LatLng(lat, lng),
+          disableDefaultUI: false,
+          scaleControl: false,
+          scrollwheel: false,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+    var map = new google.maps.Map(document.getElementById(elId), mapOptions);
+
+    new google.maps.Marker({
+      position: new google.maps.LatLng(lat, lng),
+      map: map
+    });
+  });
+}
