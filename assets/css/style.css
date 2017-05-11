@@ -2553,15 +2553,22 @@ img {
     line-height: 1;
     margin-bottom: 18px; }
 
+.charters__arrow-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  -webkit-filter: opacity(40%);
+          filter: opacity(40%); }
+
 .charters__arrow-wrapper {
   position: absolute;
   top: 77px;
   max-width: 360px;
   height: 400px;
   width: 200px;
-  overflow: hidden;
-  -webkit-filter: opacity(40%);
-          filter: opacity(40%); }
+  overflow: hidden; }
   .charters__arrow-wrapper--back {
     left: 0; }
     .charters__arrow-wrapper--back .charters__arrow {
@@ -3597,6 +3604,31 @@ img {
   box-shadow: 4px 6px 25px rgba(13, 49, 122, 0.14);
   background-color: #ffffff; }
 
+.add-services {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+          justify-content: center;
+  padding: 30px 30px; }
+
+.add-services__item {
+  position: relative;
+  -webkit-box-flex: 1;
+          flex: 1 48%;
+  margin-right: 30px;
+  margin-bottom: 30px; }
+  .add-services__item img {
+    width: 100%; }
+  .add-services__item:nth-child(2n) {
+    margin-right: 0; }
+  .add-services__item h3 {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: #fff;
+    font-size: 36px; }
+
 @media (max-width: 1599px) {
   .catalog__item:nth-child(4n) {
     margin-right: 29px; } }
@@ -4002,7 +4034,17 @@ img {
   .news-list__img {
     min-width: auto;
     width: auto;
-    margin-right: 0; } }
+    margin-right: 0; }
+  .add-services {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-align: center;
+                -ms-grid-row-align: center;
+            align-items: center; }
+  .add-services__item {
+    margin-right: 0;
+    width: 100%; } }
 
 @media (max-width: 801px) {
   .catalog__list {
@@ -4167,7 +4209,11 @@ img {
                 -ms-grid-row-align: center;
             align-items: center; }
   .contacts__user {
-    margin-right: 0; } }
+    margin-right: 0; }
+  .add-services__item h3 {
+    font-size: 25px;
+    bottom: 15px;
+    left: 15px; } }
 
 @media (max-width: 524px) {
   .footer__menu {

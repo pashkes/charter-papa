@@ -20,7 +20,7 @@ $(function () {
 
   $('<div class="clone-nav"></div>').insertBefore('.header__top').css('height', navHeight).hide();
 
-  $(window).scroll(function() {
+  $(window).on( 'scroll resize load',function() {
     winPos = $(window).scrollTop();
     if ($('body:not(.home)').length){
       if (winPos >= navPos) {
@@ -103,8 +103,8 @@ $(function () {
 
   slider.on('afterChange', setArrowsBackground);
   function setArrowsBackground() {
-    $('.charters__arrow-wrapper--back').animate({ opacity: 0 }, 100);
-    $('.charters__arrow-wrapper--next').animate({ opacity: 0 }, 100);
+    $('.charters__arrow-wrapper--back .charters__arrow-bg').animate({ opacity: 0 }, 100);
+    $('.charters__arrow-wrapper--next .charters__arrow-bg').animate({ opacity: 0 }, 100);
 
 
     var currentSlide = isFirst ? 0 : slider.slick('slickCurrentSlide');
@@ -115,11 +115,11 @@ $(function () {
     var s = slider.slick('getSlick');
     var next = slides[nextSlide].currentSrc;
     var prev = slides[prevSlide].currentSrc;
-    $('.charters__arrow-wrapper--back').css('backgroundImage', 'url("' + prev + '")');
-    $('.charters__arrow-wrapper--next').css('backgroundImage', 'url("' + next + '")');
+    $('.charters__arrow-wrapper--back .charters__arrow-bg').css('backgroundImage', 'url("' + prev + '")');
+    $('.charters__arrow-wrapper--next .charters__arrow-bg').css('backgroundImage', 'url("' + next + '")');
 
-    $('.charters__arrow-wrapper--back').animate({ opacity: 1 }, 600);
-    $('.charters__arrow-wrapper--next').animate({ opacity: 1 }, 600);
+    $('.charters__arrow-wrapper--back .charters__arrow-bg').animate({ opacity: 1 }, 600);
+    $('.charters__arrow-wrapper--next .charters__arrow-bg').animate({ opacity: 1 }, 600);
   }
   if(slider.length) {
     setTimeout(setArrowsBackground, 0);
