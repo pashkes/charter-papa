@@ -182,10 +182,9 @@ $(function () {
   }
 
   //showSubmenu Mobile
-  var menuItem = $('.menu-item-has-children'),
-      menuList = $('.js-show-submenu');
+   var   menuList = $('.js-show-submenu');
 
-  menuItem.on('click', function () {
+  $('.menu__show-sub-menu').on('click', function () {
     $(this).parents('.js-show-submenu').toggleClass('menu__list--show-menu');
   });
   //end
