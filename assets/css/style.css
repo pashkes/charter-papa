@@ -4531,7 +4531,9 @@ img {
             transform: translateX(-50%);
     top: 13px;
     width: 30px;
-    height: 30px; }
+    height: 30px;
+    border: none;
+    background-color: transparent; }
     .menu__show-sub-menu::after {
       content: '';
       position: absolute;
