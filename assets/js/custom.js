@@ -79,6 +79,7 @@ $(function () {
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
+      fade: true,
       asNavFor: '.js-slide-catalog-small'
     });
     $('.js-slide-catalog-small').slick({
