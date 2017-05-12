@@ -3272,7 +3272,7 @@ img {
       margin-right: 0; }
     .charter__slide-small li:hover {
       cursor: pointer;
-      border-color: #0083d9; }
+      border-color: #efba00; }
 
 .charter__arrow {
   position: absolute;
@@ -3949,7 +3949,9 @@ img {
 .service {
   background-color: #edf7f9;
   padding-bottom: 60px;
-  text-align: center; }
+  text-align: center;
+  padding-right: 20px;
+  padding-left: 20px; }
   .service .charter__info {
     display: -webkit-box;
     display: flex;
@@ -4644,7 +4646,8 @@ img {
   .search__btn-wrapper {
     max-width: 50%; }
   .search__btn-wrapper {
-    margin-left: auto; }
+    margin-left: auto;
+    margin-right: auto; }
   .search--show-extended .search__input-wrapper {
     max-width: 50%; }
     .search--show-extended .search__input-wrapper--range {
@@ -4716,9 +4719,12 @@ img {
   .charter__info {
     margin-left: 0;
     margin-right: 0; }
-  .service .charter__info {
-    -webkit-box-ordinal-group: -1;
-            order: -2; }
+  .service {
+    padding-right: 0;
+    padding-left: 0; }
+    .service .charter__info {
+      -webkit-box-ordinal-group: -1;
+              order: -2; }
   .service__item {
     flex-wrap: wrap;
     -webkit-box-pack: center;
@@ -4868,7 +4874,6 @@ img {
               flex-direction: column; }
   .search__btn-wrapper {
     max-width: 100%;
-    margin-left: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             flex-direction: column;
