@@ -13,7 +13,14 @@
 <header class="header">
     <div class="header__top  js-header-top">
         <div class="header__top-inner">
-            <div class="header__logo"><a href=""><img src="assets/img/logo.png" width="324" height="167" alt="Charter Papa"></a></div>
+            <div class="header__logo">
+                <a href="">
+                    <picture>
+                        <img src="assets/img/logo.png" srcset="assets/img/logo@2x.png 2x" width="324" height="167"
+                             alt="Charter Papa">
+                    </picture>
+                </a>
+            </div>
             <nav class="menu">
                 <button class="burger js-burger burger__htx" type="button"><span>toggle menu</span></button>
                 <div class="menu__list-wrapper">
@@ -185,7 +192,7 @@
                 </div>
             </li>
             <li>
-                <div class="charters__slider" >
+                <div class="charters__slider">
                     <div class="charters__img">
                         <img src="assets/img/slide-2.jpg" width="560" height="477" alt="Superyacht Charter">
                     </div>
@@ -251,7 +258,7 @@
     <h2 class="title-bottom-line" data-scroll>Лучшие места отдыха</h2>
     <div class="places__list">
         <div class="places__wrapper  places__wrapper--monaco">
-            <a href="#" class="places__item"  data-scroll>
+            <a href="#" class="places__item" data-scroll>
                 <div class="places__img">
                     <picture>
                         <img src="assets/img/places-monaco.jpg" srcset="assets/img/places-monaco@2x.jpg 2x" width="555"
@@ -571,7 +578,11 @@
 </div>
 <footer class="footer">
     <div class="footer__inner">
-        <a href="#" class="footer__logo"><img src="assets/img/logo.png" width="193" height="100" alt="Charter Papa"></a>
+        <a href="index.html" class="footer__logo">
+            <picture>
+                <img src="assets/img/logo-footer.png" srcset="assets/img/logo-footer@2x.png 2x" width="193" height="100" alt="Charter Papa">
+            </picture>
+        </a>
         <ul class="footer__menu">
             <li><a href="#">Каталог</a></li>
             <li><a href="#">Спец предложения</a></li>

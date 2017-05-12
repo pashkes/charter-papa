@@ -5,10 +5,11 @@
  */
 
 $(function () {
-  var navPos, winPos, navHeight;
+
+  //sticky header other pages,not home
+  var winPos, navHeight;
 
   function refreshVar() {
-    navPos = $('.header__top').offset().top;
     navHeight = $('.header__top').outerHeight(true);
   }
   if ($('body:not(.home)').length) {
@@ -16,14 +17,12 @@ $(function () {
     $(window).resize(refreshVar);
   }
 
-
-
   $('<div class="clone-nav"></div>').insertBefore('.header__top').css('height', navHeight).hide();
 
   $(window).on( 'scroll resize load',function() {
     winPos = $(window).scrollTop();
     if ($('body:not(.home)').length){
-      if (winPos >= navPos) {
+      if (winPos >= 1) {
         $('.header__top').addClass('fixed header__top--scroll');
         $('.clone-nav').show();
       }
@@ -34,7 +33,7 @@ $(function () {
     }
 
   });
-
+//End
 
 
   //show feedback
@@ -233,6 +232,7 @@ $(window).on('orientationchange resize', function () {
   }
 });
 
+
 //animation on scroll
 document.addEventListener('DOMContentLoaded', function () {
   var trigger = new ScrollTrigger({
@@ -246,9 +246,11 @@ document.addEventListener('DOMContentLoaded', function () {
     once: true
   }, document.body, window);
 });
+//END
 
+//inicialization maps
 if($('.map').length) {
-google.maps.event.addDomListener(window, 'load', mapInitialize);
+  google.maps.event.addDomListener(window, 'load', mapInitialize);
 }
 
 function mapInitialize() {
@@ -276,3 +278,4 @@ function mapInitialize() {
     });
   });
 }
+//End

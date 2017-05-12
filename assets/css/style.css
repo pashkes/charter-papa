@@ -3608,18 +3608,26 @@ img {
   box-shadow: 4px 6px 25px rgba(13, 49, 122, 0.14);
   background-color: #ffffff; }
 
-.add-services .page-top__inner {
-  max-width: 100%;
-  padding-right: 30px;
-  padding-left: 30px; }
+.add-services {
+  padding: 20px;
+  background-color: #edf7f9; }
 
 .add-services__list {
+  max-width: 1599px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 1570px;
+  box-shadow: 4px 6px 25px rgba(13, 49, 122, 0.14);
+  background-color: #ffffff;
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
   -webkit-box-pack: center;
           justify-content: center;
-  padding: 30px 30px; }
+  margin-bottom: 50px;
+  padding: 30px 30px;
+  padding-bottom: 0; }
 
 .add-services__item {
   position: relative;

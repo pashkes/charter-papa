@@ -13,8 +13,13 @@
 <header class="header">
     <div class="header__top  js-header-top">
         <div class="header__top-inner">
-            <div class="header__logo"><a href="index.html"><img src="assets/img/logo.png" width="324" height="167"
-                                                                alt="Charter Papa"></a></div>
+            <div class="header__logo">
+                <a href="index.html">
+                    <picture>
+                        <img src="assets/img/logo.png" srcset="assets/img/logo@2x.png 2x" width="324" height="167" alt="Charter Papa">
+                    </picture>
+                </a>
+            </div>
             <nav class="menu">
                 <button class="burger js-burger burger__htx" type="button"><span>toggle menu</span></button>
                 <div class="menu__list-wrapper">
@@ -441,7 +446,11 @@
 </div>
 <footer class="footer">
     <div class="footer__inner">
-        <a href="#" class="footer__logo"><img src="assets/img/logo.png" width="193" height="100" alt="Charter Papa"></a>
+        <a href="index.html" class="footer__logo">
+            <picture>
+                <img src="assets/img/logo-footer.png" srcset="assets/img/logo-footer@2x.png 2x" width="193" height="100" alt="Charter Papa">
+            </picture>
+        </a>
         <ul class="footer__menu">
             <li><a href="#">Каталог</a></li>
             <li><a href="#">Спец предложения</a></li>
