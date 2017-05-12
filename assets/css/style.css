@@ -2100,14 +2100,6 @@ img {
             transform: translateX(-50%);
     border: 4px solid transparent;
     border-top: 4px solid #0083d9; }
-  .menu__list .active a::before {
-    content: '';
-    position: absolute;
-    bottom: 0px;
-    right: 13px;
-    left: 13px;
-    height: 2px;
-    background-color: #0083d9; }
   .menu__list > li {
     position: relative;
     padding-bottom: 21px; }
@@ -2155,6 +2147,17 @@ img {
       opacity: 1;
       -webkit-transform: translate(-50%, 0);
               transform: translate(-50%, 0); }
+  .menu__list .active > a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 13px;
+    left: 13px;
+    height: 2px;
+    background-color: #0083d9;
+    -webkit-transform: none;
+            transform: none;
+    border: none; }
 
 .header__btn {
   position: relative;
@@ -2418,6 +2421,7 @@ img {
   padding-right: 16px;
   padding-left: 16px;
   align-self: center;
+  overflow: hidden;
   transition: all 1s; }
 
 .search__checkbox {
