@@ -16,7 +16,8 @@
             <div class="header__logo">
                 <a href="index.html">
                     <picture>
-                        <img src="assets/img/logo.png" srcset="assets/img/logo@2x.png 2x" width="324" height="167" alt="Charter Papa">
+                        <img src="assets/img/logo.png" srcset="assets/img/logo@2x.png 2x" width="324" height="167"
+                             alt="Charter Papa">
                     </picture>
                 </a>
             </div>
@@ -55,7 +56,7 @@
     <div class="search search--show-extended">
         <form action="post" class="search__inner">
             <div class="search__input-wrapper  search__input-wrapper--region">
-                <select name="region" id="region" class="search__select js-example-placeholder-multiple" required>
+                <select name="region" id="region" class="search__select js-example-placeholder-multiple">
                     <option value="default">Регион</option>
                     <option value="cannes">Cannes</option>
                     <option value="monaco">Monaco</option>
@@ -63,7 +64,7 @@
                 <label class="search__label" for="region">Регион</label>
             </div>
             <div class="search__input-wrapper  search__input-wrapper--type">
-                <select name="" id="yacht-type" class="search__select  js-example-placeholder-multiple" required>
+                <select id="yacht-type" class="search__select  js-example-placeholder-multiple">
                     <option value="default">Тип яхты</option>
                     <option value="type-1">Тип 1</option>
                     <option value="type-2">Тип 2</option>
@@ -78,7 +79,7 @@
                 <div id="slider-range"></div>
             </div>
             <div class="search__input-wrapper  search__input-wrapper--size">
-                <select name="" id="yacht-size" class="search__select js-example-placeholder-multiple" required>
+                <select id="yacht-size" class="search__select js-example-placeholder-multiple">
                     <option value="default">Размер яхты</option>
                     <option value="type-1">15.2m (49ft)</option>
                     <option value="type-2">15.2m (49ft)</option>
@@ -86,8 +87,7 @@
                 <label class="search__label" for="yacht-size">Размер яхты</label>
             </div>
             <div class="search__input-wrapper  search__input-wrapper--design">
-                <select name="design-build" id="design-build" class="search__select js-example-placeholder-multiple"
-                        required>
+                <select name="design-build" id="design-build" class="search__select js-example-placeholder-multiple">
                     <option value="default">Строитель/Дизайнер</option>
                     <option value="type-1">Строитель</option>
                     <option value="type-2">Дизайнер</option>
@@ -138,69 +138,17 @@
 <div class="service">
     <div class="service__list">
         <div class="service__item">
-        <div class="service__img">
-            <img src="assets/img/service.jpg" width="370" height="370" alt="Catamaran AMAZING GRACE - Admiral">
-            <div class="service__btns">
-                <button class="service__cart js-order" type="button">заказать</button>
-                <a href="#" class="service__show ">посмотреть</a></div>
-        </div>
-        <div class="service__main">
-            <div class="service__detail">
-                <h3>Catamaran AMAZING GRACE - Admiral</h3>
-                <div class="service__detail-inner">
-                    <div class="service__text">
-                        <p>Sailing catamaran AMAZING GRACE was built by the well-known South African shipyard
-                            Admiral in
-                            2007
-                            and received an extensive refit in 2013. Sailing yacht AMAZING GRACE measures 15.2m
-                            (50ft)
-                            and can
-                            accommodate up to 6 charter guests in 3 double cabins. S/Y AMAZING GRACE offers luxury
-                            crewed
-                            charters in the stunning Bahamas.</p>
-                        <div class="service__loc"><span>Locations & Boats: </span><a href="#">Exumas,</a><a href="#">
-                            Bahamas,</a><a href="#"> Abacos</a>
-                        </div>
-                    </div>
-
-                    <div class="services__more">
-                        <ul class="services__more-list">
-                            <li>Year 2007</li>
-                            <li>6 Guests</li>
-                            <li>3 Cabins</li>
-                            <li>LOA: 15.2m (49ft)</li>
-                            <li>Crew of 2</li>
-                        </ul>
-                        <a href="catalog-item.html" class="services__more-link">Подробнее</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="charter__info">
-            <ul class="stars">
-                <li>stars-1</li>
-                <li>stars-2</li>
-                <li>stars-3</li>
-                <li>stars-4</li>
-                <li>stars-5</li>
-            </ul>
-            <p class="charter__title-price">Price starting from US$</p>
-            <span class="charter__price">85,000.00/WK</span>
-            <button class="charter__to-order btn  btn--orange js-order">Заказать</button>
-
-        </div>
-    </div>
-        <div class="service__item">
             <div class="service__img">
-                <img src="assets/img/service-2.jpg" width="370" height="370" alt="Catamaran AMAZING GRACE - Admiral">
+                <a href="#"><img src="assets/img/service.jpg" width="370" height="370"
+                                 alt="Catamaran AMAZING GRACE - Admiral"></a>
                 <div class="service__btns">
-                    <button class="service__cart" type="button">заказать</button>
-                    <a href="#" class="service__show js-order">посмотреть</a></div>
+                    <button class="service__cart js-order" type="button">заказать</button>
+                    <a href="#" class="service__show">посмотреть</a>
+                </div>
             </div>
             <div class="service__main">
                 <div class="service__detail">
-                    <h3>Catamaran AMAZING GRACE - Admiral</h3>
+                    <h3><a href="#">Catamaran AMAZING GRACE - Admiral</a></h3>
                     <div class="service__detail-inner">
                         <div class="service__text">
                             <p>Sailing catamaran AMAZING GRACE was built by the well-known South African shipyard
@@ -212,7 +160,65 @@
                                 accommodate up to 6 charter guests in 3 double cabins. S/Y AMAZING GRACE offers luxury
                                 crewed
                                 charters in the stunning Bahamas.</p>
-                            <div class="service__loc"><span>Locations & Boats: </span><a href="#">Exumas,</a><a href="#">
+                            <div class="service__loc"><span>Locations & Boats: </span><a href="#">Exumas,</a><a
+                                    href="#">
+                                Bahamas,</a><a href="#"> Abacos</a>
+                            </div>
+                        </div>
+
+                        <div class="services__more">
+                            <ul class="services__more-list">
+                                <li>Year 2007</li>
+                                <li>6 Guests</li>
+                                <li>3 Cabins</li>
+                                <li>LOA: 15.2m (49ft)</li>
+                                <li>Crew of 2</li>
+                            </ul>
+                            <a href="catalog-item.html" class="services__more-link">Подробнее</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="charter__info">
+                <ul class="stars">
+                    <li>stars-1</li>
+                    <li>stars-2</li>
+                    <li>stars-3</li>
+                    <li>stars-4</li>
+                    <li>stars-5</li>
+                </ul>
+                <p class="charter__title-price">Price starting from US$</p>
+                <span class="charter__price">85,000.00/WK</span>
+                <button class="charter__to-order btn  btn--orange js-order">Заказать</button>
+
+            </div>
+        </div>
+        <div class="service__item">
+            <div class="service__img">
+                <a href="#"><img src="assets/img/service-2.jpg" width="370" height="370"
+                                 alt="Catamaran AMAZING GRACE - Admiral"></a>
+                <div class="service__btns">
+                    <button class="service__cart" type="button">заказать</button>
+                    <a href="#" class="service__show js-order">посмотреть</a>
+                </div>
+            </div>
+            <div class="service__main">
+                <div class="service__detail">
+                    <h3><a href="#">Catamaran AMAZING GRACE - Admiral</a></h3>
+                    <div class="service__detail-inner">
+                        <div class="service__text">
+                            <p>Sailing catamaran AMAZING GRACE was built by the well-known South African shipyard
+                                Admiral in
+                                2007
+                                and received an extensive refit in 2013. Sailing yacht AMAZING GRACE measures 15.2m
+                                (50ft)
+                                and can
+                                accommodate up to 6 charter guests in 3 double cabins. S/Y AMAZING GRACE offers luxury
+                                crewed
+                                charters in the stunning Bahamas.</p>
+                            <div class="service__loc"><span>Locations & Boats: </span><a href="#">Exumas,</a><a
+                                    href="#">
                                 Bahamas,</a><a href="#"> Abacos</a>
                             </div>
                         </div>
@@ -247,14 +253,16 @@
         </div>
         <div class="service__item">
             <div class="service__img">
-                <img src="assets/img/service-3.jpg" width="370" height="370" alt="Catamaran AMAZING GRACE - Admiral">
+                <a href="#"><img src="assets/img/service-3.jpg" width="370" height="370"
+                                 alt="Catamaran AMAZING GRACE - Admiral"></a>
                 <div class="service__btns">
                     <button class="service__cart js-order" type="button">заказать</button>
-                    <a href="#" class="service__show">посмотреть</a></div>
+                    <a href="#" class="service__show">посмотреть</a>
+                </div>
             </div>
             <div class="service__main">
                 <div class="service__detail">
-                    <h3>Catamaran AMAZING GRACE - Admiral</h3>
+                    <h3><a href="#">Catamaran AMAZING GRACE - Admiral</a></h3>
                     <div class="service__detail-inner">
                         <div class="service__text">
                             <p>Sailing catamaran AMAZING GRACE was built by the well-known South African shipyard
@@ -266,7 +274,8 @@
                                 accommodate up to 6 charter guests in 3 double cabins. S/Y AMAZING GRACE offers luxury
                                 crewed
                                 charters in the stunning Bahamas.</p>
-                            <div class="service__loc"><span>Locations & Boats: </span><a href="#">Exumas,</a><a href="#">
+                            <div class="service__loc"><span>Locations & Boats: </span><a href="#">Exumas,</a><a
+                                    href="#">
                                 Bahamas,</a><a href="#"> Abacos</a>
                             </div>
                         </div>
@@ -314,7 +323,8 @@
     <div class="footer__inner">
         <a href="index.html" class="footer__logo">
             <picture>
-                <img src="assets/img/logo-footer.png" srcset="assets/img/logo-footer@2x.png 2x" width="193" height="100" alt="Charter Papa">
+                <img src="assets/img/logo-footer.png" srcset="assets/img/logo-footer@2x.png 2x" width="193" height="100"
+                     alt="Charter Papa">
             </picture>
         </a>
         <ul class="footer__menu">
@@ -358,21 +368,34 @@
         </div>
     </form>
 </div>
-<div class="overlay  js-order-popup">
-    <form class="form">
+<div class="overlay js-order-popup">
+    <form class="form form--order">
         <button class="form__close" type="button">close</button>
         <p class="form__title">Введите ваши данные.</p>
+        <p class="form__sub-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis doloribus inventore ipsam labore minima mollitia quibusdam repudiandae saepe tempora.</p>
         <div class="form__main">
-            <div class="form__field-wrapper"><input type="text" class="form__field" id="you-name-order" required><label
-                    for="you-name-order">Name</label></div>
-            <div class="form__field-wrapper"><input type="email" class="form__field" id="you-email-order" required><label
-                    for="you-email-order">Email</label></div>
-            <div class="form__field-wrapper"><input type="tel" class="form__field" id="you-tel-order" required><label
-                    for="you-tel-order">096 34223442</label></div>
-            <div class="form__field-wrapper  form__field-wrapper--textarea"><textarea class="form__field"
-                                                                                      id="message"
-                                                                                      placeholder="Текст сообщения"></textarea>
-                <label for="message">Текст сообщения</label></div>
+            <div class="form__columns">
+                <div class="form__column">
+                    <div class="form__field-wrapper">
+                        <input type="text" class="form__field" id="you-name-order" required>
+                        <label for="you-name-order">Name</label>
+                    </div>
+                    <div class="form__field-wrapper">
+                        <input type="email" class="form__field" id="you-email-order" required>
+                        <label for="you-email-order">Email</label>
+                    </div>
+                    <div class="form__field-wrapper">
+                        <input type="tel" class="form__field" id="you-tel-order" required>
+                        <label for="you-tel-order">096 34223442</label>
+                    </div>
+                </div>
+                <div class="form__column">
+                    <div class="form__field-wrapper  form__field-wrapper--textarea">
+                        <textarea class="form__field" id="message" placeholder="Текст сообщения"></textarea>
+                        <label for="message">Текст сообщения</label>
+                    </div>
+                </div>
+            </div>
             <button class="form__btn btn btn--primary" type="submit">Заказать</button>
         </div>
     </form>

@@ -88,15 +88,8 @@ $(function () {
       asNavFor: '.js-slide-catalog-big',
       centerMode: true,
       focusOnSelect: true,
-      arrows: false,
-      responsive: [
-        {
-          breakpoint: 1234,
-          settings: {
-            slidesToShow: 8
-          }
-        }
-      ]
+      prevArrow: '<button class="charter__arrow  charter__arrow--back" type="button"></button>',
+      nextArrow: '<button class="charter__arrow  charter__arrow--next" type="button"></button>'
     });
   }
 
