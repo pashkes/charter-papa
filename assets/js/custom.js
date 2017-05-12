@@ -39,8 +39,10 @@ $(function () {
   //show feedback
   var bntFeedback = $('.js-feedback-btn'),
       btnCharters = $('.js-btn-show-charters'),
+      btnOrder = $('.js-order'),
       overlay = $('.overlay'),
       overlayFeedback = $('.js-feedback'),
+      overlayOrder = $('.js-order-popup'),
       overlayCharters = $('.js-our-charters'),
       overlayShow = 'overlay--show',
       closeOverlay = $('.form__close'),
@@ -51,7 +53,9 @@ $(function () {
   bntFeedback.on('click', function () {
     overlayFeedback.addClass(overlayShow);
   });
-
+  btnOrder.on('click', function () {
+    overlayOrder.addClass(overlayShow);
+  });
   //close overlay
   closeOverlay.on('click', function () {
     $(this).parents(overlay).removeClass(overlayShow);

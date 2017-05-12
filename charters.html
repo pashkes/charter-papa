@@ -40,7 +40,9 @@
                         </li>
                         <li><a href="contact.html">Контакты</a></li>
                     </ul>
-                    <button class="header__music header__btn" type="button">play music</button>
+                    <button class="header__music header__btn" type="button">
+                        <img src="assets/img/svg/icon-music.svg" width="15" height="16" alt="play music">
+                    </button>
                     <a href="#" class="header__lang header__btn">En</a>
                 </div>
             </nav>
@@ -138,8 +140,8 @@
         <div class="service__img">
             <img src="assets/img/service.jpg" width="370" height="370" alt="Catamaran AMAZING GRACE - Admiral">
             <div class="service__btns">
-                <button class="service__cart" type="button">заказать</button>
-                <a href="#" class="service__show">посмотреть</a></div>
+                <button class="service__cart js-order" type="button">заказать</button>
+                <a href="#" class="service__show ">посмотреть</a></div>
         </div>
         <div class="service__main">
             <div class="service__detail">
@@ -184,7 +186,7 @@
             </ul>
             <p class="charter__title-price">Price starting from US$</p>
             <span class="charter__price">85,000.00/WK</span>
-            <button class="charter__to-order btn  btn--orange">Заказать</button>
+            <button class="charter__to-order btn  btn--orange js-order">Заказать</button>
 
         </div>
     </div>
@@ -193,7 +195,7 @@
                 <img src="assets/img/service-2.jpg" width="370" height="370" alt="Catamaran AMAZING GRACE - Admiral">
                 <div class="service__btns">
                     <button class="service__cart" type="button">заказать</button>
-                    <a href="#" class="service__show">посмотреть</a></div>
+                    <a href="#" class="service__show js-order">посмотреть</a></div>
             </div>
             <div class="service__main">
                 <div class="service__detail">
@@ -238,7 +240,7 @@
                 </ul>
                 <p class="charter__title-price">Price starting from US$</p>
                 <span class="charter__price">85,000.00/WK</span>
-                <button class="charter__to-order btn  btn--orange">Заказать</button>
+                <button class="charter__to-order btn  btn--orange js-order">Заказать</button>
 
             </div>
         </div>
@@ -246,7 +248,7 @@
             <div class="service__img">
                 <img src="assets/img/service-3.jpg" width="370" height="370" alt="Catamaran AMAZING GRACE - Admiral">
                 <div class="service__btns">
-                    <button class="service__cart" type="button">заказать</button>
+                    <button class="service__cart js-order" type="button">заказать</button>
                     <a href="#" class="service__show">посмотреть</a></div>
             </div>
             <div class="service__main">
@@ -292,7 +294,7 @@
                 </ul>
                 <p class="charter__title-price">Price starting from US$</p>
                 <span class="charter__price">85,000.00/WK</span>
-                <button class="charter__to-order btn  btn--orange">Заказать</button>
+                <button class="charter__to-order btn  btn--orange js-order">Заказать</button>
 
             </div>
         </div>
@@ -352,6 +354,25 @@
             <div class="form__field-wrapper"><input type="tel" class="form__field" id="you-tel" required><label
                     for="you-tel">096 34223442</label></div>
             <button class="form__btn btn btn--primary" type="submit">Отправить</button>
+        </div>
+    </form>
+</div>
+<div class="overlay  js-order-popup">
+    <form class="form">
+        <button class="form__close" type="button">close</button>
+        <p class="form__title">Введите вашы данные.</p>
+        <div class="form__main">
+            <div class="form__field-wrapper"><input type="text" class="form__field" id="you-name-order" required><label
+                    for="you-name-order">Name</label></div>
+            <div class="form__field-wrapper"><input type="email" class="form__field" id="you-email-order" required><label
+                    for="you-email-order">Email</label></div>
+            <div class="form__field-wrapper"><input type="tel" class="form__field" id="you-tel-order" required><label
+                    for="you-tel-order">096 34223442</label></div>
+            <div class="form__field-wrapper  form__field-wrapper--textarea"><textarea class="form__field"
+                                                                                      id="message"
+                                                                                      placeholder="Текст сообщения"></textarea>
+                <label for="message">Текст сообщения</label></div>
+            <button class="form__btn btn btn--primary" type="submit">Заказать</button>
         </div>
     </form>
 </div>
