@@ -3253,17 +3253,7 @@ img {
   padding-left: 31px;
   bottom: 31px;
   text-align: left; }
-  .charter__slide-small .slick-track {
-    -webkit-transform: none !important;
-            transform: none !important;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: start;
-            justify-content: flex-start; }
   .charter__slide-small li {
-    display: inline-block !important;
-    align-self: flex-start;
-    vertical-align: top;
     margin-right: 9px;
     font-size: 0;
     border: 2px solid transparent;
@@ -4336,9 +4326,7 @@ img {
 
 @media (max-width: 1554px) {
   .charter__slider {
-    max-width: 410px; }
-  .charter__slide-small li {
-    width: 9.6% !important; } }
+    max-width: 410px; } }
 
 @media (max-width: 1661px) {
   .header__logo {
@@ -4448,8 +4436,6 @@ img {
     width: 140px; }
     .search__btn::before {
       right: 30px; }
-  .charter__slide-small li {
-    width: 11% !important; }
   .places__item--center .places__item-title {
     font-size: 43px; }
   .service__main {
