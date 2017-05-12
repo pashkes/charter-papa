@@ -4075,13 +4075,19 @@ img {
     padding-top: 60px; }
   .header__charter-wrap {
     min-height: auto;
+    width: 200px;
+    padding: 0;
+    margin-left: -100px;
     bottom: 74px; }
     .header__charter-wrap::before, .header__charter-wrap::after {
       display: none;
       padding-right: 0;
       padding-left: 0; }
   .header__charter {
-    padding: 9px 33px; }
+    padding: 9px 33px;
+    left: 0;
+    -webkit-transform: none;
+            transform: none; }
     .header__charter::before {
       display: none; }
   .title-bottom-line {
