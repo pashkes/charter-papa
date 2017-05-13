@@ -3131,7 +3131,8 @@ img {
   max-width: 360px;
   height: 400px;
   width: 200px;
-  overflow: hidden; }
+  overflow: hidden;
+  cursor: pointer; }
   .charters__arrow-wrapper--back {
     left: 0; }
     .charters__arrow-wrapper--back .charters__arrow {
@@ -3147,7 +3148,8 @@ img {
       border-bottom: 2px solid #0083d9;
       -webkit-transform: rotate(45deg);
               transform: rotate(45deg);
-      cursor: pointer; }
+      cursor: pointer;
+      transition: all .35s ease-out; }
   .charters__arrow-wrapper--next {
     right: 0; }
     .charters__arrow-wrapper--next .charters__arrow {
@@ -3164,9 +3166,12 @@ img {
               transform: rotate(-45deg);
       font-size: 0;
       cursor: pointer;
-      z-index: 2; }
+      z-index: 2;
+      transition: all .35s ease-out; }
   .charters__arrow-wrapper img {
     opacity: .4; }
+  .charters__arrow-wrapper:hover .charters__arrow {
+    border-color: #5e6e90; }
 
 .charters__img {
   -webkit-box-flex: 0;
