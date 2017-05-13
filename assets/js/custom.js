@@ -90,7 +90,21 @@ $(function () {
       centerMode: true,
       focusOnSelect: true,
       prevArrow: '<button class="charter__arrow  charter__arrow--back" type="button"></button>',
-      nextArrow: '<button class="charter__arrow  charter__arrow--next" type="button"></button>'
+      nextArrow: '<button class="charter__arrow  charter__arrow--next" type="button"></button>',
+      responsive: [
+        {
+          breakpoint: 426 ,
+          settings: {
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 550 ,
+          settings: {
+            slidesToShow: 5
+          }
+        }
+      ]
     });
   }
 
