@@ -3,8 +3,26 @@
 /**
  * Document ready functions
  */
+//smal header on scroll
+$(window).on("load scroll ready ontouchstart ontouchmove touchmove", function () {
+
+  /**
+   * Scroll body class
+   */
+  if($(window).scrollTop() >= "40") {
+    if(!$('body').hasClass('scrolled')){
+      $('body').addClass('scrolled');
+    }
+  } else {
+    if($('body').hasClass('scrolled')){
+      $('body').removeClass('scrolled');
+    }
+  }
+
+});
 
 $(function () {
+
 
   //sticky header other pages,not home
   var winPos, navHeight;
