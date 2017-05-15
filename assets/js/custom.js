@@ -32,12 +32,17 @@ $(function () {
   }
   if ($('body:not(.home)').length) {
     refreshVar();
-    $(window).resize(refreshVar);
+    // $(window).resize(refreshVar);
+    $(window).on('scroll resize', function() {
+      refreshVar();
+      $('.clone-nav').css('height',navHeight )
+    });
   }
 
   $('<div class="clone-nav"></div>').insertBefore('.header__top').css('height', navHeight).hide();
 
   $(window).on( 'scroll resize load',function() {
+    refreshVar();
     winPos = $(window).scrollTop();
     if ($('body:not(.home)').length){
       if (winPos >= 1) {
