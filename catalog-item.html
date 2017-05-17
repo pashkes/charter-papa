@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link id="favicon" rel="shortcut icon" href="assets/img/favicon2x.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/icon_ios144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/icon_ios114.png">
+    <title>Charter Papa</title>
+</head>
+<body>
+<header class="header">
+    <div class="header__top  js-header-top">
+        <div class="header__top-inner">
+            <div class="header__logo">
+                <a href="index.html">
+                    <picture>
+                        <img src="assets/img/logo.png" srcset="assets/img/logo@2x.png 2x" width="324" height="167"
+                             alt="Charter Papa">
+                    </picture>
+                </a>
+            </div>
+            <nav class="menu">
+                <button class="burger js-burger burger__htx" type="button"><span>toggle menu</span></button>
+                <div class="menu__list-wrapper">
+                    <ul class="menu__list js-show-submenu">
+                        <li class="active"><a href="catalog.html">Каталог</a></li>
+                        <li><a href="#">Спец предложения</a></li>
+                        <li><a href="charters.html">чартеры</a></li>
+                        <li><a href="news-list.html">Новости</a></li>
+                        <li><a href="#">Партнерам</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="additional-services.html">Доп услуги</a>
+                            <button class="menu__show-sub-menu" type="button">show submenu mobile</button>
+                            <ul>
+                                <li><a href="#">Трансферы</a></li>
+                                <li><a href="#">Аренда авто</a></li>
+                                <li><a href="#">Организация мероприятий</a></li>
+                                <li><a href="#">Консьерж сервис.</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                    <button class="header__music header__btn" type="button">
+                        <img src="assets/img/svg/icon-music.svg" width="15" height="16" alt="play music">
+                    </button>
+                    <a href="#" class="header__lang header__btn">En</a>
+                </div>
+            </nav>
+            <button class="header__music header__btn" type="button">
+                <img src="assets/img/svg/icon-music.svg" width="15" height="16" alt="play music">
+            </button>
+            <a href="#" class="header__lang header__btn">En</a>
+            <button class="header__feedback header__btn js-feedback-btn" type="button">Обратная связь</button>
+        </div>
+    </div>
+    <div class="search search--show-extended">
+        <form action="post" class="search__inner">
+            <div class="search__input-wrapper  search__input-wrapper--region">
+                <select name="region" id="region" class="search__select js-example-placeholder-multiple">
+                    <option value="default">Регион</option>
+                    <option value="cannes">Cannes</option>
+                    <option value="monaco">Monaco</option>
+                </select>
+                <label class="search__label" for="region">Регион</label>
+            </div>
+            <div class="search__input-wrapper  search__input-wrapper--type">
+                <select id="yacht-type" class="search__select  js-example-placeholder-multiple">
+                    <option value="default">Тип яхты</option>
+                    <option value="type-1">Тип 1</option>
+                    <option value="type-2">Тип 2</option>
+                </select>
+                <label class="search__label" for="yacht-type">Тип яхты</label>
+            </div>
+            <div class="search__input-wrapper  search__input-wrapper--range">
+                <div class="search__range-wrapper">
+                    <label class="search__label" for="range">Цена</label>
+                    <input type="text" class="search__range" id="range">
+                </div>
+                <div id="slider-range"></div>
+            </div>
+            <div class="search__input-wrapper  search__input-wrapper--size">
+                <select id="yacht-size" class="search__select js-example-placeholder-multiple">
+                    <option value="default">Размер яхты</option>
+                    <option value="type-1">15.2m (49ft)</option>
+                    <option value="type-2">15.2m (49ft)</option>
+                </select>
+                <label class="search__label" for="yacht-size">Размер яхты</label>
+            </div>
+            <div class="search__input-wrapper  search__input-wrapper--design">
+                <select name="design-build" id="design-build" class="search__select js-example-placeholder-multiple">
+                    <option value="default">Строитель/Дизайнер</option>
+                    <option value="type-1">Строитель</option>
+                    <option value="type-2">Дизайнер</option>
+                </select>
+                <label class="search__label" for="design-build">Строитель/Дизайнер</label>
+            </div>
+            <div class="search__input-wrapper  search__input-wrapper--checkbox">
+                <div class="search__checkbox-wrap">
+                    <input type="checkbox" class="search__checkbox" id="special-offer">
+                    <label for="special-offer">Спец предложения</label>
+                </div>
+                <div class="search__checkbox-wrap">
+                    <input type="checkbox" class="search__checkbox" id="barbout" checked>
+                    <label for="barbout">Барбоут</label>
+                </div>
+                <div class="search__checkbox-wrap">
+                    <input type="checkbox" class="search__checkbox" id="skipper">
+                    <label for="skipper">Скиппер</label>
+                </div>
+                <div class="search__checkbox-wrap">
+                    <input type="checkbox" class="search__checkbox" id="crew">
+                    <label for="crew">Экипаж</label>
+                </div>
+                <div class="search__checkbox-wrap">
+                    <input type="checkbox" class="search__checkbox" id="last-minute">
+                    <label for="last-minute">Последняя минута</label>
+                </div>
+            </div>
+
+            <div class="search__btn-wrapper">
+                <button class="search__advanced  btn  btn--border-white  js-search-extended" type="button">Расширенный
+                    поиск
+                </button>
+                <button class="search__btn btn  btn--white" type="submit">Поиск</button>
+            </div>
+        </form>
+    </div>
+</header>
+<div class="page-top">
+    <div class="page-top__inner">
+        <h2>Чартеры</h2>
+        <div class="breadcrumb">
+            <span class="breadcrumb__item"><a href="#">Главная</a></span>
+            <span class="breadcrumb__item">Чартеры</span>
+        </div>
+    </div>
+</div>
+<div class="charter">
+    <div class="charter__inner">
+        <div class="charter__title">
+            <h2>MILK AND HONEY - Palmer Johnson Motor Yacht</h2>
+            <ul class="stars">
+                <li>stars-1</li>
+                <li>stars-2</li>
+                <li>stars-3</li>
+                <li>stars-4</li>
+                <li>stars-5</li>
+            </ul>
+        </div>
+        <div class="charter__top">
+            <div class="charter__top-inner">
+                <div class="charter__slider">
+                    <div class="charter__slider-big">
+                        <ul class="js-slide-catalog-big">
+                            <li>
+                                <a href="assets/img/slide-1.jpg" data-fancybox="gallery">
+                                    <img src="assets/img/slide-1.jpg" width="612" height="410"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/img/slide-2.jpg" data-fancybox="gallery">
+                                    <img src="assets/img/slide-2-2.jpg" width="612" height="410"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/img/slide-3-3.jpg" data-fancybox="gallery">
+                                    <img src="assets/img/slide-3-3.jpg" width="612" height="410"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/img/slide-4.jpg" data-fancybox="gallery">
+                                    <img src="assets/img/slide-4.jpg" width="612" height="410"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/img/slide-5.jpg" data-fancybox="gallery">
+                                    <img src="assets/img/slide-5.jpg" width="612" height="410"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/img/slide-6.jpg" data-fancybox="gallery">
+                                    <img src="assets/img/slide-6.jpg" width="612" height="410"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/img/slide-7.jpg" data-fancybox="gallery">
+                                    <img src="assets/img/slide-7.jpg" width="612" height="410"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/img/slide-8.jpg" data-fancybox="gallery">
+                                    <img src="assets/img/slide-8.jpg" width="612" height="410"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/img/slide-9.jpg" data-fancybox="gallery">
+                                    <img src="assets/img/slide-9.jpg" width="612" height="410"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assets/img/slide-10.jpg" data-fancybox="gallery">
+                                    <img src="assets/img/slide-10.jpg" width="612" height="410"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                        <div class="charter__slide-small">
+                            <ul class="js-slide-catalog-small">
+                                <li>
+                                    <img src="assets/img/slide-small.jpg" width="60" height="60"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </li>
+                                <li>
+                                    <img src="assets/img/small-slide-2.jpg" width="60" height="60"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </li>
+                                <li>
+                                    <img src="assets/img/small-slide-3.jpg" width="60" height="60"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </li>
+                                <li>
+                                    <img src="assets/img/small-slide-4.jpg" width="60" height="60"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </li>
+                                <li>
+                                    <img src="assets/img/small-slide-5.jpg" width="60" height="60"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </li>
+                                <li>
+                                    <img src="assets/img/small-slide-6.jpg" width="60" height="60"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </li>
+                                <li>
+                                    <img src="assets/img/small-slide-7.jpg" width="60" height="60"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </li>
+                                <li>
+                                    <img src="assets/img/small-slide-8.jpg" width="60" height="60"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </li>
+                                <li>
+                                    <img src="assets/img/small-slide-9.jpg" width="60" height="60"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </li>
+                                <li>
+                                    <img src="assets/img/small-slide-10.jpg" width="60" height="60"
+                                         alt="MILK AND HONEY - Palmer Johnson Motor Yacht">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                <table class="charter__detail">
+                    <tr>
+                        <td>Type/Year:</td>
+                        <td>Palmer Johnson Motor Yacht/2003</td>
+                    </tr>
+                    <tr>
+                        <td>Refit:</td>
+                        <td>2012</td>
+                    </tr>
+                    <tr>
+                        <td>L.O.A.:</td>
+                        <td>38.10m (125' )</td>
+                    </tr>
+                    <tr>
+                        <td>Charter Guest:</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Cabins:</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Cruise Speed:</td>
+                        <td>13 knots</td>
+                    </tr>
+                    <tr>
+                        <td>Beam:</td>
+                        <td>7.77m (25' 6")</td>
+                    </tr>
+                    <tr>
+                        <td>Crew:</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>Max Speed:</td>
+                        <td>15 knots</td>
+                    </tr>
+                    <tr>
+                        <td>Engines:</td>
+                        <td>2 x MTU 16V2000 1800hp</td>
+                    </tr>
+                    <tr>
+                        <td>Engines:</td>
+                        <td>St Martin info</td>
+                    </tr>
+                    <tr>
+                        <td>Engines:</td>
+                        <td>Palmer Johnson, Murray</td>
+                    </tr>
+                </table>
+                <div class="charter__info">
+                    <div class="charter__header">
+                        US$ 85,000.00/WK
+                        US$ 85,000.00 -<br>
+                        100,000.00/WK
+                    </div>
+                    <button class="charter__to-order btn  btn--orange js-order">Заказать</button>
+                    <p class="charter__title-price">Price starting from US$</p>
+                    <span class="charter__price">85,000.00/WK</span>
+                    <p class="charter__offers">M/Y MILK AND HONEY is offering 8 days for the price of 7 if booked by
+                        April
+                        15th 2017!</p>
+                </div>
+            </div>
+            <div class="charters__tags">
+                <span>Locations & Boats:</span> <a href="#">Exumas,</a> <a href="#">Bahamas,</a> <a href="#">Abacos</a>
+            </div>
+        </div>
+        <div class="charters__desc">
+            <section class="charters__detail-item">
+                <h3>Yacht Charter Description</h3>
+                <p>Luxury motor yacht MILK AND HONEY is a 38m (125ft) Palmer Johnson yacht built in 2003 and refitted in
+                    2012. She has a semi displacement Aluminium hull and comfort features including zero speed
+                    stabilisers
+                    and full air-conditioning. MILK AND HONEY is a well designed yacht designed to host 10 guests in
+                    homely
+                    comfort.</p>
+                <p>The beauty of MILK AND HONEY is in her simplicity. Her beautiful interior boasts a range of elegant
+                    woods
+                    including olive and inlaid black walnut floor, walls of American Cherry wood and Cuban mahogany
+                    panelling all complimented by soft leather and cooling textured fabrics. </p>
+            </section>
+            <section class="charters__detail-item">
+                <h3>Yacht Charter Accommodation</h3>
+                <p>Motor Yacht MILK and HONEY comfortably accommodates 10 guests in 5 luxurious cabins and she can
+                    cruise
+                    with a
+                    maximum of 12 guests. Her full width Master suite is on the main deck and has a centerline king
+                    sized
+                    bed,
+                    walk-in closets and a luxurious steam bath, shower and Spa Pool tub. The remaining guest
+                    accommodation
+                    consists of three double staterooms each with a Queen sized bed. The twin cabin has upper and lower
+                    Pullmans, ensuite bathroom with shower and entertainment system with Plasma TV. Each guest cabin is
+                    equipped
+                    with a private ensuite bathroom and entertainment facilities.</p>
+            </section>
+            <section class="charters__detail-item">
+                <h3>Yacht Charter Accommodation</h3>
+                <p>Motor Yacht MILK and HONEY comfortably accommodates 10 guests in 5 luxurious cabins and she can
+                    cruise
+                    with a maximum of 12 guests. Her full width Master suite is on the main deck and has a centerline
+                    king
+                    sized bed, walk-in closets and a luxurious steam bath, shower and Spa Pool tub. The remaining guest
+                    accommodation consists of three double staterooms each with a Queen sized bed. The twin cabin has
+                    upper
+                    and lower Pullmans, ensuite bathroom with shower and entertainment system with Plasma TV. Each guest
+                    cabin is equipped with a private ensuite bathroom and entertainment facilities.</p>
+            </section>
+
+        </div>
+    </div>
+</div>
+<div class="catalog">
+    <div class="page-top">
+        <div class="page-top__inner">
+            <h2>Похожие яхты</h2>
+        </div>
+    </div>
+    <div class="catalog__inner">
+        <div class="catalog__list">
+            <div class="catalog__item">
+                <span class="catalog__price">$ 134234234</span>
+                <a href="#" class="catalog__img">
+                    <picture>
+                        <img src="assets/img/new-yacht-1.jpg" srcset="assets/img/new-yacht-1@2x.jpg 2x" width="370"
+                             height="310" alt="Motor Yacht ANASTASIA">
+                    </picture>
+                </a>
+                <div class="catalog__info">
+                    <h3 class="catalog__title">Motor Yacht ANASTASIA</h3>
+                    <ul class="stars">
+                        <li>stars-1</li>
+                        <li>stars-2</li>
+                        <li>stars-3</li>
+                        <li>stars-4</li>
+                        <li>stars-5</li>
+                    </ul>
+                    <p class="catalog__size">m (196'9'') | 2011</p>
+                    <div class="catalog__desc">
+                        <p>Luxury superyacht EXCELLENCE V was designed by Raymond Langton Designs and launched by
+                            German</p>
+                    </div>
+                    <a href="#" class="catalog__more">Подробнее</a>
+                </div>
+            </div>
+            <div class="catalog__item">
+                <span class="catalog__price">$ 134234234</span>
+
+                <a href="#" class="catalog__img">
+                    <picture>
+                        <img src="assets/img/new-yacht-2.jpg" srcset="assets/img/new-yacht-2@2x.jpg 2x" width="370"
+                             height="310" alt="Motor Yacht ANASTASIA">
+                    </picture>
+                </a>
+                <div class="catalog__info">
+                    <h3 class="catalog__title">Motor Yacht ANASTASIA</h3>
+                    <ul class="stars">
+                        <li>stars-1</li>
+                        <li>stars-2</li>
+                        <li>stars-3</li>
+                        <li>stars-4</li>
+                        <li>stars-5</li>
+                    </ul>
+                    <p class="catalog__size">m (196'9'') | 2011</p>
+                    <div class="catalog__desc">
+                        <p>Luxury superyacht EXCELLENCE V was designed by Raymond Langton Designs and launched by
+                            German</p>
+                    </div>
+                    <a href="#" class="catalog__more">Подробнее</a>
+                </div>
+            </div>
+            <div class="catalog__item">
+                <span class="catalog__price">$ 134234234</span>
+
+                <a href="#" class="catalog__img">
+                    <picture>
+                        <img src="assets/img/new-yacht-3.jpg" srcset="assets/img/new-yacht-3@2x.jpg 2x" width="370"
+                             height="310" alt="Motor Yacht ANASTASIA">
+                    </picture>
+                </a>
+                <div class="catalog__info">
+                    <h3 class="catalog__title">Motor Yacht ANASTASIA</h3>
+                    <ul class="stars">
+                        <li>stars-1</li>
+                        <li>stars-2</li>
+                        <li>stars-3</li>
+                        <li>stars-4</li>
+                        <li>stars-5</li>
+                    </ul>
+                    <p class="catalog__size">m (196'9'') | 2011</p>
+                    <div class="catalog__desc">
+                        <p>Luxury superyacht EXCELLENCE V was designed by Raymond Langton Designs and launched by
+                            German</p>
+                    </div>
+                    <a href="#" class="catalog__more">Подробнее</a>
+                </div>
+            </div>
+            <div class="catalog__item">
+                <span class="catalog__price">$ 134234234</span>
+
+                <a href="#" class="catalog__img">
+                    <picture>
+                        <img src="assets/img/new-yacht-4.jpg" srcset="assets/img/new-yacht-4@2x.jpg 2x" width="370"
+                             height="310" alt="Motor Yacht ANASTASIA">
+                    </picture>
+                </a>
+                <div class="catalog__info">
+                    <h3 class="catalog__title">Motor Yacht ANASTASIA</h3>
+                    <ul class="stars">
+                        <li>stars-1</li>
+                        <li>stars-2</li>
+                        <li>stars-3</li>
+                        <li>stars-4</li>
+                        <li>stars-5</li>
+                    </ul>
+                    <p class="catalog__size">m (196'9'') | 2011</p>
+                    <div class="catalog__desc">
+                        <p>Luxury superyacht EXCELLENCE V was designed by Raymond Langton Designs and launched by
+                            German</p>
+                    </div>
+                    <a href="#" class="catalog__more">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer__inner">
+        <a href="index.html" class="footer__logo">
+            <picture>
+                <img src="assets/img/logo-footer.png" srcset="assets/img/logo-footer@2x.png 2x" width="193" height="100"
+                     alt="Charter Papa">
+            </picture>
+        </a>
+        <ul class="footer__menu">
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Спец предложения</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Партнерам</a></li>
+            <li><a href="#">Доп услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        <div class="footer__pay">
+            <p class="footer__title-pay">Наши платежные системы</p>
+            <div class="footer__img-pay">
+                <div class="footer__img"><img src="assets/img/visa-logo.svg" width="53" height="16" alt="visa">
+                </div>
+                <div class="footer__img"><img src="assets/img/MasterCard_Logo.svg" width="50" height="28"
+                                              alt="MasterCard"></div>
+            </div>
+        </div>
+        <div class="footer__contacts">
+            <p>8 Boulevard Theodore Roosevelt,<br>
+                Beauleu Sur Mer, France 06310 <br>
+                <a class="footer__tel" href="tel:+33751115450">+33 751 11 54 50;</a>
+                <a class="footer__mail" href="mailto:charterpapa@yandex.ru">charterpapa@yandex.ru</a>
+            </p>
+        </div>
+    </div>
+</footer>
+<div class="overlay  js-feedback">
+    <form class="form">
+        <button class="form__close" type="button">close</button>
+        <p class="form__title">Наш менеджер с вами свяжется не позже чем через 12 часов.</p>
+        <div class="form__main">
+            <div class="form__field-wrapper"><input type="text" class="form__field" id="you-name" required><label
+                    for="you-name">Name</label></div>
+            <div class="form__field-wrapper"><input type="email" class="form__field" id="you-email" required><label
+                    for="you-email">Email</label></div>
+            <div class="form__field-wrapper"><input type="tel" class="form__field" id="you-tel" required><label
+                    for="you-tel">096 34223442</label></div>
+            <button class="form__btn btn btn--primary" type="submit">Отправить</button>
+        </div>
+    </form>
+</div>
+<div class="overlay js-order-popup">
+    <form class="form form--order">
+        <button class="form__close" type="button">close</button>
+        <p class="form__title">Введите ваши данные.</p>
+        <p class="form__sub-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis doloribus inventore ipsam labore minima mollitia quibusdam repudiandae saepe tempora.</p>
+        <div class="form__main">
+            <div class="form__columns">
+                <div class="form__column">
+                    <div class="form__field-wrapper">
+                        <input type="text" class="form__field" id="you-name-order" required>
+                        <label for="you-name-order">Name</label>
+                    </div>
+                    <div class="form__field-wrapper">
+                        <input type="email" class="form__field" id="you-email-order" required>
+                        <label for="you-email-order">Email</label>
+                    </div>
+                    <div class="form__field-wrapper">
+                        <input type="tel" class="form__field" id="you-tel-order" required>
+                        <label for="you-tel-order">096 34223442</label>
+                    </div>
+                </div>
+                <div class="form__column">
+                    <div class="form__field-wrapper  form__field-wrapper--textarea">
+                        <textarea class="form__field" id="message" placeholder="Текст сообщения"></textarea>
+                        <label for="message">Текст сообщения</label>
+                    </div>
+                </div>
+            </div>
+            <button class="form__btn btn btn--primary" type="submit">Заказать</button>
+        </div>
+    </form>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/plugins.min.js"></script>
+<script src="assets/js/custom.min.js"></script>
+</body>
+</html>
