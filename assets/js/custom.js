@@ -3,17 +3,69 @@
 /**
  * Document ready functions
  */
+//smal header on scroll
+$(window).on("load scroll ready ontouchstart ontouchmove touchmove", function () {
+
+  /**
+   * Scroll body class
+   */
+  if($(window).scrollTop() >= "40") {
+    if(!$('body').hasClass('scrolled')){
+      $('body').addClass('scrolled');
+    }
+  } else {
+    if($('body').hasClass('scrolled')){
+      $('body').removeClass('scrolled');
+    }
+  }
+
+});
 
 $(function () {
 
 
+  //sticky header other pages,not home
+  var winPos, navHeight;
+
+  function refreshVar() {
+    navHeight = $('.header__top').outerHeight(true);
+  }
+  if ($('body:not(.home)').length) {
+    refreshVar();
+    // $(window).resize(refreshVar);
+    $(window).on('scroll resize', function() {
+      refreshVar();
+      $('.clone-nav').css('height',navHeight )
+    });
+  }
+
+  $('<div class="clone-nav"></div>').insertBefore('.header__top').css('height', navHeight).hide();
+
+  $(window).on( 'scroll resize load',function() {
+    refreshVar();
+    winPos = $(window).scrollTop();
+    if ($('body:not(.home)').length){
+      if (winPos >= 1) {
+        $('.header__top').addClass('fixed header__top--scroll');
+        $('.clone-nav').show();
+      }
+      else {
+        $('.header__top').removeClass('fixed header__top--scroll');
+        $('.clone-nav').hide();
+      }
+    }
+
+  });
+//End
 
 
   //show feedback
   var bntFeedback = $('.js-feedback-btn'),
       btnCharters = $('.js-btn-show-charters'),
+      btnOrder = $('.js-order'),
       overlay = $('.overlay'),
       overlayFeedback = $('.js-feedback'),
+      overlayOrder = $('.js-order-popup'),
       overlayCharters = $('.js-our-charters'),
       overlayShow = 'overlay--show',
       closeOverlay = $('.form__close'),
@@ -24,7 +76,9 @@ $(function () {
   bntFeedback.on('click', function () {
     overlayFeedback.addClass(overlayShow);
   });
-
+  btnOrder.on('click', function () {
+    overlayOrder.addClass(overlayShow);
+  });
   //close overlay
   closeOverlay.on('click', function () {
     $(this).parents(overlay).removeClass(overlayShow);
@@ -48,6 +102,7 @@ $(function () {
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
+      fade: true,
       asNavFor: '.js-slide-catalog-small'
     });
     $('.js-slide-catalog-small').slick({
@@ -57,12 +112,19 @@ $(function () {
       asNavFor: '.js-slide-catalog-big',
       centerMode: true,
       focusOnSelect: true,
-      arrows: false,
+      prevArrow: '<button class="charter__arrow  charter__arrow--back" type="button"></button>',
+      nextArrow: '<button class="charter__arrow  charter__arrow--next" type="button"></button>',
       responsive: [
         {
-          breakpoint: 1234,
+          breakpoint: 426 ,
           settings: {
-            slidesToShow: 8
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 550 ,
+          settings: {
+            slidesToShow: 5
           }
         }
       ]
@@ -75,8 +137,8 @@ $(function () {
 
   slider.on('afterChange', setArrowsBackground);
   function setArrowsBackground() {
-    $('.charters__arrow-wrapper--back').animate({ opacity: 0 }, 100);
-    $('.charters__arrow-wrapper--next').animate({ opacity: 0 }, 100);
+    $('.charters__arrow-wrapper--back .charters__arrow-bg').animate({ opacity: 0 }, 100);
+    $('.charters__arrow-wrapper--next .charters__arrow-bg').animate({ opacity: 0 }, 100);
 
 
     var currentSlide = isFirst ? 0 : slider.slick('slickCurrentSlide');
@@ -87,13 +149,11 @@ $(function () {
     var s = slider.slick('getSlick');
     var next = slides[nextSlide].currentSrc;
     var prev = slides[prevSlide].currentSrc;
-    console.log(next);
-    console.log(prev);
-    $('.charters__arrow-wrapper--back').css('backgroundImage', 'url("' + prev + '")');
-    $('.charters__arrow-wrapper--next').css('backgroundImage', 'url("' + next + '")');
+    $('.charters__arrow-wrapper--back .charters__arrow-bg').css('backgroundImage', 'url("' + prev + '")');
+    $('.charters__arrow-wrapper--next .charters__arrow-bg').css('backgroundImage', 'url("' + next + '")');
 
-    $('.charters__arrow-wrapper--back').animate({ opacity: 1 }, 600);
-    $('.charters__arrow-wrapper--next').animate({ opacity: 1 }, 600);
+    $('.charters__arrow-wrapper--back .charters__arrow-bg').animate({ opacity: 1 }, 600);
+    $('.charters__arrow-wrapper--next .charters__arrow-bg').animate({ opacity: 1 }, 600);
   }
   if(slider.length) {
     setTimeout(setArrowsBackground, 0);
@@ -153,10 +213,9 @@ $(function () {
   }
 
   //showSubmenu Mobile
-  var menuItem = $('.menu-item-has-children'),
-      menuList = $('.js-show-submenu');
+   var   menuList = $('.js-show-submenu');
 
-  menuItem.on('click', function () {
+  $('.menu__show-sub-menu').on('click', function () {
     $(this).parents('.js-show-submenu').toggleClass('menu__list--show-menu');
   });
   //end
@@ -175,18 +234,9 @@ $(function () {
 
 });
 
-function offsetSearch() {
-  var headerHeight = $('.header__top').outerHeight();
-  var search = $('.search');
-  headerTop.css('position','fixed');
-  search.css('margin-top', headerHeight);
-}
 
 //equal center img height on places
 $(window).on('resize load', function () {
-  if ($('body:not(.home)').length){
-    offsetSearch();
-  }
   var imgHeight = $('.places__wrapper--monaco').outerHeight();
   $('.places__item--center img').css('height', imgHeight)
 });
@@ -216,6 +266,7 @@ $(window).on('orientationchange resize', function () {
   }
 });
 
+
 //animation on scroll
 document.addEventListener('DOMContentLoaded', function () {
   var trigger = new ScrollTrigger({
@@ -229,3 +280,36 @@ document.addEventListener('DOMContentLoaded', function () {
     once: true
   }, document.body, window);
 });
+//END
+
+//inicialization maps
+if($('.map').length) {
+  google.maps.event.addDomListener(window, 'load', mapInitialize);
+}
+
+function mapInitialize() {
+  $(".contacts__map").each(function(){
+    var thisEl = $(this),
+        el = thisEl.find(".map"),
+        elId = el.attr("id"),
+        lat = parseFloat(el.attr("data-lat")),
+        lng = parseFloat(el.attr("data-lng")),
+        mapzoom = parseInt(el.attr("data-size")),
+        mapOptions = {
+          zoom: mapzoom,
+          center: new google.maps.LatLng(lat, lng),
+          disableDefaultUI: false,
+          scaleControl: false,
+          scrollwheel: false,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+    var map = new google.maps.Map(document.getElementById(elId), mapOptions);
+
+    new google.maps.Marker({
+      position: new google.maps.LatLng(lat, lng),
+      map: map
+    });
+  });
+}
+//End

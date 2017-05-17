@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link id="favicon" rel="shortcut icon" href="assets/img/favicon2x.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/icon_ios144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/icon_ios114.png">
+    <title>News</title>
+</head>
+<body>
+<header class="header">
+    <div class="header__top  js-header-top">
+        <div class="header__top-inner">
+            <div class="header__logo">
+                <a href="index.html">
+                    <picture>
+                        <img src="assets/img/logo.png" srcset="assets/img/logo@2x.png 2x" width="324" height="167" alt="Charter Papa">
+                    </picture>
+                </a>
+            </div>
+            <nav class="menu">
+                <button class="burger js-burger burger__htx" type="button"><span>toggle menu</span></button>
+                <div class="menu__list-wrapper">
+                    <ul class="menu__list js-show-submenu">
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="#">Спец предложения</a></li>
+                        <li><a href="charters.html">чартеры</a></li>
+                        <li><a href="news-list.html">Новости</a></li>
+                        <li><a href="#">Партнерам</a></li>
+                        <li class="menu-item-has-children active">
+                            <a href="#">Доп услуги</a>
+                            <button class="menu__show-sub-menu" type="button">show submenu mobile</button>
+                            <ul>
+                                <li><a href="#">Трансферы</a></li>
+                                <li><a href="#">Аренда авто</a></li>
+                                <li><a href="#">Организация мероприятий</a></li>
+                                <li><a href="#">Консьерж сервис.</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                    <button class="header__music header__btn" type="button">
+                        <img src="assets/img/svg/icon-music.svg" width="15" height="16" alt="play music">
+                    </button>
+                    <a href="#" class="header__lang header__btn">En</a>
+                </div>
+            </nav>
+            <button class="header__music header__btn" type="button">
+                <img src="assets/img/svg/icon-music.svg" width="15" height="16" alt="play music">
+            </button>
+            <a href="#" class="header__lang header__btn">En</a>
+            <button class="header__feedback header__btn js-feedback-btn" type="button">Обратная связь</button>
+        </div>
+    </div>
+</header>
+<div class="add-services">
+    <div class="page-top">
+        <div class="page-top__inner">
+            <h2>Дополнительные услуги</h2>
+            <div class="breadcrumb">
+                <span class="breadcrumb__item"><a href="#">Главная</a></span>
+                <span class="breadcrumb__item">Чартеры</span>
+            </div>
+        </div>
+    </div>
+    <div class="add-services__list">
+        <a href="#" class="add-services__item">
+            <div class="add-services__img"><img src="assets/img/yacht-transportation-01.jpg" width="800" height="453" alt="Трансферы"></div>
+            <h3>Трансферы</h3>
+        </a>
+        <a href="#" class="add-services__item">
+            <div class="add-services__img"><img src="assets/img/events.jpg" width="800" height="453" alt="Организация мероприятий"></div>
+            <h3>Организация мероприятий</h3>
+        </a>
+        <a href="#" class="add-services__item">
+            <div class="add-services__img"><img src="assets/img/car.jpg" width="800" height="453" alt="Аренда авто"></div>
+            <h3>Аренда авто</h3>
+        </a>
+        <a href="#" class="add-services__item">
+            <div class="add-services__img"><img src="assets/img/Concierge.jpg" width="800" height="453" alt="Консьерж сервис"></div>
+            <h3>Консьерж сервис</h3>
+        </a>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer__inner">
+        <a href="index.html" class="footer__logo">
+            <picture>
+                <img src="assets/img/logo-footer.png" srcset="assets/img/logo-footer@2x.png 2x" width="193" height="100" alt="Charter Papa">
+            </picture>
+        </a>
+        <ul class="footer__menu">
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Спец предложения</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Партнерам</a></li>
+            <li><a href="#">Доп услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        <div class="footer__pay">
+            <p class="footer__title-pay">Наши платежные системы</p>
+            <div class="footer__img-pay">
+                <div class="footer__img"><img src="assets/img/visa-logo.svg" width="53" height="16" alt="visa">
+                </div>
+                <div class="footer__img"><img src="assets/img/MasterCard_Logo.svg" width="50" height="28"
+                                              alt="MasterCard"></div>
+            </div>
+        </div>
+        <div class="footer__contacts">
+            <p>8 Boulevard Theodore Roosevelt,<br>
+                Beauleu Sur Mer, France 06310 <br>
+                <a class="footer__tel" href="tel:+33751115450">+33 751 11 54 50;</a>
+                <a class="footer__mail" href="mailto:charterpapa@yandex.ru">charterpapa@yandex.ru</a>
+            </p>
+        </div>
+    </div>
+</footer>
+<div class="overlay  js-feedback">
+    <form class="form">
+        <button class="form__close" type="button">close</button>
+        <p class="form__title">Наш менеджер с вами свяжется не позже чем через 12 часов.</p>
+        <div class="form__main">
+            <div class="form__field-wrapper"><input type="text" class="form__field" id="you-name" required><label
+                    for="you-name">Name</label></div>
+            <div class="form__field-wrapper"><input type="email" class="form__field" id="you-email" required><label
+                    for="you-email">Email</label></div>
+            <div class="form__field-wrapper"><input type="tel" class="form__field" id="you-tel" required><label
+                    for="you-tel">096 34223442</label></div>
+            <button class="form__btn btn btn--primary" type="submit">Отправить</button>
+        </div>
+    </form>
+</div>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/plugins.min.js"></script>
+<script src="assets/js/custom.min.js"></script>
+</body>
+</html>

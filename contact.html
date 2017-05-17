@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link id="favicon" rel="shortcut icon" href="assets/img/favicon2x.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/icon_ios144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/icon_ios114.png">
+    <title>Contacts</title>
+</head>
+<body>
+<header class="header">
+    <div class="header__top  js-header-top">
+        <div class="header__top-inner">
+            <div class="header__logo">
+                <a href="index.html">
+                    <picture>
+                        <img src="assets/img/logo.png" srcset="assets/img/logo@2x.png 2x" width="324" height="167" alt="Charter Papa">
+                    </picture>
+                </a>
+            </div>
+            <nav class="menu">
+                <button class="burger js-burger burger__htx" type="button"><span>toggle menu</span></button>
+                <div class="menu__list-wrapper">
+                    <ul class="menu__list js-show-submenu">
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="#">Спец предложения</a></li>
+                        <li><a href="charters.html">чартеры</a></li>
+                        <li><a href="news-list.html">Новости</a></li>
+                        <li><a href="#">Партнерам</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="additional-services.html">Доп услуги</a>
+                            <button class="menu__show-sub-menu" type="button">show submenu mobile</button>
+                            <ul>
+                                <li><a href="#">Трансферы</a></li>
+                                <li><a href="#">Аренда авто</a></li>
+                                <li><a href="#">Организация мероприятий</a></li>
+                                <li><a href="#">Консьерж сервис.</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="#">Контакты</a></li>
+                    </ul>
+                    <button class="header__music header__btn" type="button">
+                        <img src="assets/img/svg/icon-music.svg" width="15" height="16" alt="play music">
+                    </button>
+                    <a href="#" class="header__lang header__btn">En</a>
+                </div>
+            </nav>
+            <button class="header__music header__btn" type="button">
+                <img src="assets/img/svg/icon-music.svg" width="15" height="16" alt="play music">
+            </button>
+            <a href="#" class="header__lang header__btn">En</a>
+            <button class="header__feedback header__btn js-feedback-btn" type="button">Обратная связь</button>
+        </div>
+    </div>
+</header>
+<div class="contacts">
+    <div class="page-top">
+        <div class="page-top__inner">
+            <h2>Контакты</h2>
+            <div class="breadcrumb">
+                <span class="breadcrumb__item"><a href="#">Главная</a></span>
+                <span class="breadcrumb__item">Чартеры</span>
+            </div>
+        </div>
+    </div>
+    <div class="contacts__inner">
+        <div class="contacts__maps">
+            <div class="contacts__map">
+                <div class="contacts__map-top">
+                    <strong>FRANCE, COTE D'AZUR</strong>
+                    <p>8 Boulevard Theodore Roosevelt, Beauleu Sur Mer, France 06310</p>
+                </div>
+                <div class="map"  data-lat="43.714105" data-lng="7.340186" data-size="16" id="mapa"></div>
+            </div>
+            <div class="contacts__map">
+                <div class="contacts__map-top">
+                    <strong>РОССИЯ</strong>
+                    <p>Оболенский пер., дом 10, Москва,119021</p>
+                </div>
+                <div class="map" id="map" data-lat="55.732478" data-lng="37.582210" data-size="16"></div>
+            </div>
+        </div>
+        <div class="contacts__users">
+            <div class="contacts__user">
+                <div class="contacts__img">
+                    <picture>
+                        <img src="assets/img/contacts-foto-1.jpg" srcset="assets/img/contacts-foto-1@2x.jpg" width="450" height="450" alt="Artem Tridvornov">
+                    </picture>
+                </div>
+                <div class="contacts__info"><span class="contacts__prof">CEO </span>
+                    <h3 class="contacts__name">Artem Tridvornov</h3>
+                    <a href="mailto:charterpapa@yandex.ru" class="contacts__email">charterpapa@yandex.ru</a>
+                </div>
+            </div>
+            <div class="contacts__user">
+                <div class="contacts__img">
+                    <picture>
+                        <img src="assets/img/contacts-foto-2.jpg" srcset="assets/img/contacts-foto-2@2x.jpg" width="450" height="450" alt="Alena Mihaleva">
+                    </picture>
+                </div>
+                <div class="contacts__info"><span class="contacts__prof">DIRECTOR OF STRATEGIC PARTNERSHIPS</span>
+                    <h3 class="contacts__name">Alena Mihaleva</h3>
+                    <a href="mailto:charterpapa.andrei@yandex.ru" class="contacts__email">charterpapa.andrei@yandex.ru</a>
+                </div>
+            </div>
+            <div class="contacts__user">
+                <div class="contacts__img">
+                    <picture>
+                        <img src="assets/img/contacts-foto-3.jpg" srcset="assets/img/contacts-foto-3@2x.jpg 2x" width="450" height="450" alt="Andrei Fathutdinov">
+                    </picture>
+                </div>
+                <div class="contacts__info"><span class="contacts__prof">СHIEF DEVELOPMENT OFFICER</span>
+                    <h3 class="contacts__name">Andrei Fathutdinov</h3>
+                    <a href="mailto:charterpapa@yandex.ru" class="contacts__email">charterpapa@yandex.ru</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer__inner">
+        <a href="index.html" class="footer__logo">
+            <picture>
+                <img src="assets/img/logo-footer.png" srcset="assets/img/logo-footer@2x.png 2x" width="193" height="100" alt="Charter Papa">
+            </picture>
+        </a>
+        <ul class="footer__menu">
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Спец предложения</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Партнерам</a></li>
+            <li><a href="#">Доп услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+        <div class="footer__pay">
+            <p class="footer__title-pay">Наши платежные системы</p>
+            <div class="footer__img-pay">
+                <div class="footer__img"><img src="assets/img/visa-logo.svg" width="53" height="16" alt="visa">
+                </div>
+                <div class="footer__img"><img src="assets/img/MasterCard_Logo.svg" width="50" height="28"
+                                              alt="MasterCard"></div>
+            </div>
+        </div>
+        <div class="footer__contacts">
+            <p>8 Boulevard Theodore Roosevelt,<br>
+                Beauleu Sur Mer, France 06310 <br>
+                <a class="footer__tel" href="tel:+33751115450">+33 751 11 54 50;</a>
+                <a class="footer__mail" href="mailto:charterpapa@yandex.ru">charterpapa@yandex.ru</a>
+            </p>
+        </div>
+    </div>
+</footer>
+<div class="overlay  js-feedback">
+    <form class="form">
+        <button class="form__close" type="button">close</button>
+        <p class="form__title">Наш менеджер с вами свяжется не позже чем через 12 часов.</p>
+        <div class="form__main">
+            <div class="form__field-wrapper"><input type="text" class="form__field" id="you-name" required><label
+                    for="you-name">Name</label></div>
+            <div class="form__field-wrapper"><input type="email" class="form__field" id="you-email" required><label
+                    for="you-email">Email</label></div>
+            <div class="form__field-wrapper"><input type="tel" class="form__field" id="you-tel" required><label
+                    for="you-tel">096 34223442</label></div>
+            <button class="form__btn btn btn--primary" type="submit">Отправить</button>
+        </div>
+    </form>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsyqvJTsl5lC2L-xb460y6VqS3uTfI7RI"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/plugins.min.js"></script>
+<script src="assets/js/custom.min.js"></script>
+</body>
+</html>

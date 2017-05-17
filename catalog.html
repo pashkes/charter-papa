@@ -13,18 +13,25 @@
 <header class="header">
     <div class="header__top  js-header-top">
         <div class="header__top-inner">
-            <div class="header__logo"><a href="index.html"><img src="assets/img/logo.png" width="324" height="167" alt="Charter Papa"></a></div>
+            <div class="header__logo">
+                <a href="index.html">
+                    <picture>
+                        <img src="assets/img/logo.png" srcset="assets/img/logo@2x.png 2x" width="324" height="167" alt="Charter Papa">
+                    </picture>
+                </a>
+            </div>
             <nav class="menu">
                 <button class="burger js-burger burger__htx" type="button"><span>toggle menu</span></button>
                 <div class="menu__list-wrapper">
                     <ul class="menu__list js-show-submenu">
                         <li class="active"><a href="#">Каталог</a></li>
                         <li><a href="#">Спец предложения</a></li>
-                        <li><a href="#">чартеры</a></li>
-                        <li><a href="#">Новости</a></li>
+                        <li><a href="charters.html">чартеры</a></li>
+                        <li><a href="news-list.html">Новости</a></li>
                         <li><a href="#">Партнерам</a></li>
                         <li class="menu-item-has-children">
-                            <a href="#">Доп услуги</a>
+                            <a href="additional-services.html">Доп услуги</a>
+                            <button class="menu__show-sub-menu" type="button">show submenu mobile</button>
                             <ul>
                                 <li><a href="#">Трансферы</a></li>
                                 <li><a href="#">Аренда авто</a></li>
@@ -32,13 +39,17 @@
                                 <li><a href="#">Консьерж сервис.</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
                     </ul>
-                    <button class="header__music header__btn" type="button">play music</button>
+                    <button class="header__music header__btn" type="button">
+                        <img src="assets/img/svg/icon-music.svg" width="15" height="16" alt="play music">
+                    </button>
                     <a href="#" class="header__lang header__btn">En</a>
                 </div>
             </nav>
-            <button class="header__music header__btn" type="button">play music</button>
+            <button class="header__music header__btn" type="button">
+                <img src="assets/img/svg/icon-music.svg" width="15" height="16" alt="play music">
+            </button>
             <a href="#" class="header__lang header__btn">En</a>
             <button class="header__feedback header__btn js-feedback-btn" type="button">Обратная связь</button>
         </div>
@@ -46,7 +57,7 @@
     <div class="search search--show-extended">
         <form action="post" class="search__inner">
             <div class="search__input-wrapper  search__input-wrapper--region">
-                <select name="region" id="region" class="search__select js-example-placeholder-multiple" required>
+                <select name="region" id="region" class="search__select js-example-placeholder-multiple">
                     <option value="default">Регион</option>
                     <option value="cannes">Cannes</option>
                     <option value="monaco">Monaco</option>
@@ -54,7 +65,7 @@
                 <label class="search__label" for="region">Регион</label>
             </div>
             <div class="search__input-wrapper  search__input-wrapper--type">
-                <select name="" id="yacht-type" class="search__select  js-example-placeholder-multiple" required>
+                <select id="yacht-type" class="search__select  js-example-placeholder-multiple">
                     <option value="default">Тип яхты</option>
                     <option value="type-1">Тип 1</option>
                     <option value="type-2">Тип 2</option>
@@ -69,7 +80,7 @@
                 <div id="slider-range"></div>
             </div>
             <div class="search__input-wrapper  search__input-wrapper--size">
-                <select name="" id="yacht-size" class="search__select js-example-placeholder-multiple" required>
+                <select  id="yacht-size" class="search__select js-example-placeholder-multiple">
                     <option value="default">Размер яхты</option>
                     <option value="type-1">15.2m (49ft)</option>
                     <option value="type-2">15.2m (49ft)</option>
@@ -77,8 +88,7 @@
                 <label class="search__label" for="yacht-size">Размер яхты</label>
             </div>
             <div class="search__input-wrapper  search__input-wrapper--design">
-                <select name="design-build" id="design-build" class="search__select js-example-placeholder-multiple"
-                        required>
+                <select name="design-build" id="design-build" class="search__select js-example-placeholder-multiple">
                     <option value="default">Строитель/Дизайнер</option>
                     <option value="type-1">Строитель</option>
                     <option value="type-2">Дизайнер</option>
@@ -131,12 +141,12 @@
         <div class="catalog__list">
             <div class="catalog__item">
                 <span class="catalog__price">$ 134234234</span>
-                <div class="catalog__img">
+                <a href="#" class="catalog__img">
                     <picture>
                         <img src="assets/img/new-yacht-1.jpg" srcset="assets/img/new-yacht-1@2x.jpg 2x" width="370"
                              height="310" alt="Motor Yacht ANASTASIA">
                     </picture>
-                </div>
+                </a>
                 <div class="catalog__info">
                     <h3 class="catalog__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -151,18 +161,18 @@
                         <p>Luxury superyacht EXCELLENCE V was designed by Raymond Langton Designs and launched by
                             German</p>
                     </div>
-                    <a href="#" class="catalog__more">Подробнее</a>
+                    <a href="catalog-item.html" class="catalog__more">Подробнее</a>
                 </div>
             </div>
             <div class="catalog__item">
                                 <span class="catalog__price">$ 134234234</span>
 
-                <div class="catalog__img">
+                <a href="#" class="catalog__img">
                     <picture>
                         <img src="assets/img/new-yacht-2.jpg" srcset="assets/img/new-yacht-2@2x.jpg 2x" width="370"
                              height="310" alt="Motor Yacht ANASTASIA">
                     </picture>
-                </div>
+                </a>
                 <div class="catalog__info">
                     <h3 class="catalog__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -183,12 +193,12 @@
             <div class="catalog__item">
                                 <span class="catalog__price">$ 134234234</span>
 
-                <div class="catalog__img">
+                <a href="#" class="catalog__img">
                     <picture>
                         <img src="assets/img/new-yacht-3.jpg" srcset="assets/img/new-yacht-3@2x.jpg 2x" width="370"
                              height="310" alt="Motor Yacht ANASTASIA">
                     </picture>
-                </div>
+                </a>
                 <div class="catalog__info">
                     <h3 class="catalog__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -209,12 +219,12 @@
             <div class="catalog__item">
                                 <span class="catalog__price">$ 134234234</span>
 
-                <div class="catalog__img">
+                <a href="#" class="catalog__img">
                     <picture>
                         <img src="assets/img/new-yacht-4.jpg" srcset="assets/img/new-yacht-4@2x.jpg 2x" width="370"
                              height="310" alt="Motor Yacht ANASTASIA">
                     </picture>
-                </div>
+                </a>
                 <div class="catalog__info">
                     <h3 class="catalog__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -235,12 +245,12 @@
             <div class="catalog__item">
                                 <span class="catalog__price">$ 134234234</span>
 
-                <div class="catalog__img">
+                <a href="#" class="catalog__img">
                     <picture>
                         <img src="assets/img/new-yacht-1.jpg" srcset="assets/img/new-yacht-1@2x.jpg 2x" width="370"
                              height="310" alt="Motor Yacht ANASTASIA">
                     </picture>
-                </div>
+                </a>
                 <div class="catalog__info">
                     <h3 class="catalog__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -261,12 +271,12 @@
             <div class="catalog__item">
                                 <span class="catalog__price">$ 134234234</span>
 
-                <div class="catalog__img">
+                <a href="#" class="catalog__img">
                     <picture>
                         <img src="assets/img/new-yacht-2.jpg" srcset="assets/img/new-yacht-2@2x.jpg 2x" width="370"
                              height="310" alt="Motor Yacht ANASTASIA">
                     </picture>
-                </div>
+                </a>
                 <div class="catalog__info">
                     <h3 class="catalog__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -287,12 +297,12 @@
             <div class="catalog__item">
                                 <span class="catalog__price">$ 134234234</span>
 
-                <div class="catalog__img">
+                <a href="#" class="catalog__img">
                     <picture>
                         <img src="assets/img/new-yacht-3.jpg" srcset="assets/img/new-yacht-3@2x.jpg 2x" width="370"
                              height="310" alt="Motor Yacht ANASTASIA">
                     </picture>
-                </div>
+                </a>
                 <div class="catalog__info">
                     <h3 class="catalog__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -313,12 +323,12 @@
             <div class="catalog__item">
                                 <span class="catalog__price">$ 134234234</span>
 
-                <div class="catalog__img">
+                <a href="#" class="catalog__img">
                     <picture>
                         <img src="assets/img/new-yacht-4.jpg" srcset="assets/img/new-yacht-4@2x.jpg 2x" width="370"
                              height="310" alt="Motor Yacht ANASTASIA">
                     </picture>
-                </div>
+                </a>
                 <div class="catalog__info">
                     <h3 class="catalog__title">Motor Yacht ANASTASIA</h3>
                     <ul class="stars">
@@ -349,7 +359,11 @@
 </div>
 <footer class="footer">
     <div class="footer__inner">
-        <a href="#" class="footer__logo"><img src="assets/img/logo.png" width="193" height="100" alt="Charter Papa"></a>
+        <a href="index.html" class="footer__logo">
+            <picture>
+                <img src="assets/img/logo-footer.png" srcset="assets/img/logo-footer@2x.png 2x" width="193" height="100" alt="Charter Papa">
+            </picture>
+        </a>
         <ul class="footer__menu">
             <li><a href="#">Каталог</a></li>
             <li><a href="#">Спец предложения</a></li>
@@ -391,30 +405,9 @@
         </div>
     </form>
 </div>
-<div class="overlay  js-our-charters">
-    <form class="form  form--charters">
-        <button class="form__close" type="button">close</button>
-        <p class="form__title">По вопросам сотрудничества и чартерного маркетинга</p>
-        <p class="form__human-contacts">
-            <strong class="form__human-prof">СHIEF DEVELOPMENT OFFICER</strong>
-            <span class="form__human-name">Andrei Fathutdinov</span>
-        </p>
-        <div class="form__main">
-            <div class="form__field-wrapper"><input type="email" class="form__field" id="you-email" required><label
-                    for="you-email">Email</label></div>
-            <div class="form__field-wrapper  form__field-wrapper--textarea"><textarea class="form__field"
-                                                                                      id="message"
-                                                                                      placeholder="Текст сообщения"></textarea>
-                <label for="message">Текст сообщения</label></div>
-            <button class="form__btn btn btn--primary" type="submit">Отправить</button>
-        </div>
-    </form>
-</div>
+
 <script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/plugins/slick.min.js"></script>
-<script src="assets/js/plugins/scrollTriger.min.js"></script>
-<script src="assets/js/plugins/select2.min.js"></script>
-<script src="assets/js/plugins/jquery-ui.min.js"></script>
-<script src="assets/js/custom.js"></script>
+<script src="assets/js/plugins.min.js"></script>
+<script src="assets/js/custom.min.js"></script>
 </body>
 </html>
